@@ -1,0 +1,59 @@
+{
+    "users": [
+        {
+            "id": 2,
+            "first_name": "David",
+            "last_name": "Cohen",
+            "date_of_birth": " 1989-12-01",
+            "photos": [],
+            "posts": [],
+            "friends": [
+                1,
+                4,
+                7
+            ]
+        }
+    ],
+    "posts": [
+        {
+            "id": 1,
+            "user_id": 2,
+            "timestamp": "",
+            "content": "Today I learned how to model data",
+            "comments": [
+                {
+                    "user_id": 1,
+                    "timestamp": "",
+                    "content": "Good job!",
+                    "reactions": []
+                }
+            ],
+            "reactions": [
+                {
+                    "user_id": 1,
+                    "type": "like"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "event_name": "Beach Party",
+            "start_date": "",
+            "end_date": "",
+            "location": "Tel-Aviv, Israel",
+            "description": "Same shit, different day",
+            "attendees": [
+                {
+                    "user_id": 2,
+                    "type": "going"
+                },
+                {
+                    "user_id": 4,
+                    "type": "maybe"
+                }
+            ]
+        }
+    ]
+}
