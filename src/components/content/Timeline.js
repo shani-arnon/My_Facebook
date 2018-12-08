@@ -31,8 +31,7 @@ class Timeline extends Component {
                 return res.json()
             })
             .then(json => {
-                // console.log('array? ', Array.isArray(json))
-                // console.log('length? ', json.length)
+                console.log('Before setState')
                 this.setState({
                     posts: json
                 })
@@ -40,7 +39,6 @@ class Timeline extends Component {
             .catch(ex => {
                 console.log('parsing faild', ex)
             })
-
     }
 
     selectTab = (tab) => {

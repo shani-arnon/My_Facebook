@@ -6,6 +6,7 @@ const Comment = ({ user_id, timestamp, content, reactions }) => {
     return (
         <Box>
             <P>{content}</P>
+
         </Box>
     )
 }

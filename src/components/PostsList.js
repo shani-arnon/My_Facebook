@@ -4,6 +4,9 @@ import Post from "./Post"
 
 
 export default class PostsList extends Component {
+    state = {
+        posts: []
+    }
     render() {
         return (
             <StyledGallery>

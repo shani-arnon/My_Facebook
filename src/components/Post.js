@@ -8,7 +8,8 @@ const Post = ({ author, timestamp, content, comments, reactions }) => {
         <Box>
             <Header>
                 <Img></Img>
-                <UserName>{author.first_name} {author.last_name}</UserName>
+                <UserName>
+                </UserName>
             </Header>
             <Time>{timestamp}</Time>
             <P>{content}</P>
