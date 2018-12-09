@@ -21,7 +21,7 @@ router.get('/', md(async (req, res) => {
 router.get('/:user_id', md(async (req, res) => {
     const data = await read_file(path.resolve(__dirname, '../posts_data.json'), 'utf-8')
     const all_posts = JSON.parse(data)
-    const user_posts = all_posts.filter(post => post.author.user_id == req.params.user_id)
+    const user_posts = all_posts.filter(post => post.user_id == req.params.user_id)
     res.json(user_posts)
 }))
 //create a new post
@@ -33,7 +33,8 @@ router.post('/', md(async (req, res) => {
         id: all_posts.length + 1,
         user_id: req.body.user_id,
         timestamp: new Date().getTime(),
-        content: req.body.content
+        content: req.body.content,
+
     }
     all_posts.push(new_post)
     await write_file(file_path, JSON.stringify(all_posts))

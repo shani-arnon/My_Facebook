@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import CreatePost from "../CreatePost";
-// import c from '../../common/constants'
-import Post from '../Post'
 
 import Images from '../Photos';
 import FriendsList from "../FreindsList";
@@ -31,7 +29,6 @@ class Timeline extends Component {
                 return res.json()
             })
             .then(json => {
-                console.log('Before setState')
                 this.setState({
                     posts: json
                 })
@@ -46,7 +43,6 @@ class Timeline extends Component {
     }
 
     getPosY(tab) {
-        // console.log({ tab });
         const selected = this.state.selected;
         const current = this.state[tab];
         return selected === tab ? current.pickedY : current.normalY;
@@ -126,7 +122,6 @@ const FromIcon = styled.div`
     margin-right: 1rem;
 
 `
-
 const Description = styled.div`
     display: flex;
     flex-direction: column;

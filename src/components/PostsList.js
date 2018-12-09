@@ -2,16 +2,16 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Post from "./Post"
 
-
 export default class PostsList extends Component {
     state = {
         posts: []
     }
     render() {
+        const { posts } = this.props
         return (
             <StyledGallery>
                 <GalleryBox>
-                    {this.props.posts.map((post, i) => <Post key={i} {...post} />)}
+                    {posts.map((post, i) => <Post key={i} {...post} />)}
                 </GalleryBox>
             </StyledGallery>
         )

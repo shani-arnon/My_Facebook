@@ -5,7 +5,6 @@ import TopBar from '../TopBar';
 import Links from '../Links';
 import CreatePost from "../CreatePost";
 import PostsList from '../PostsList';
-import Post from '../Post';
 
 export default class Feed extends Component {
     state = {
