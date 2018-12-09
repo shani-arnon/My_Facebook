@@ -34,14 +34,14 @@ const Box = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
-    /* border-right: 1px solid rgb(204, 208, 213); */
-    /* border-left: 1px solid rgb(204, 208, 213); */
-    /* border-bottom: 1px solid rgb(204, 208, 213); */
-    /* border-top: 1px solid rgb(204, 208, 213); */
+    border-right: 1px solid rgb(204, 208, 213);
+    border-left: 1px solid rgb(204, 208, 213);
+    border-bottom: 1px solid rgb(204, 208, 213);
+    border-top: 1px solid rgb(204, 208, 213);
     font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 `
 const PostBox = styled.div`
     display: flex;
@@ -49,13 +49,11 @@ const PostBox = styled.div`
     align-items: center;
     padding-top: 1rem;
     padding-left: 1rem;
-    border: 2px solid red;
-
+    /* border: 2px solid red; */
 `
 const Img = styled.div`
     /* background: #d8dce6 url('me.jpg') no-repeat center; */
     background: #d8dce6 url('dog2.jpg') no-repeat center;
-
     background-size: 100% 100%;
     -webkit-background-size: 100% 100%;
     display: flex;

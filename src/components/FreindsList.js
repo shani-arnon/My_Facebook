@@ -34,29 +34,22 @@ const Box = styled.div`
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
     text-align: center;
-    padding: 2rem;
-    /* border: 2px solid blue; */
 `
 
 const Gallery = styled.div`
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    max-width: 100%;
-    border: 2px solid red;
-    padding: 0
-
+    width: 100%;
 `
 const Item = styled.div`
     background: #d8dce6 url('dog.jpg') no-repeat center;
     background-size: 100% 100%;
     -webkit-background-size: 100% 100%;
     background-size: cover;
-    height: 12rem;
-    width: 12rem; 
+    height: 13rem;
+    width: 33.333%;; 
     border: .5px solid rgb(204, 208, 213);
-    /* margin-bottom: 3rem; */
-    /* max-width: 100%; */
+    margin-bottom: 2rem;
 `
 
 const Bottom = styled.div`

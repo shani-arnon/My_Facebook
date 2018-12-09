@@ -12,6 +12,15 @@ const Post = ({ user_id, last_name, first_name, avatar, timestamp, content, comm
             </Header>
             <Time>{timestamp}</Time>
             <P>{content}</P>
+            <Actions>
+                <Like>Like</Like>
+                <CommentAction>Comment</CommentAction>
+                <Share>Share</Share>
+            </Actions>
+            <Reactions>
+                <Icon />
+                <Number>5</Number>
+            </Reactions>
             <CommentList>
                 {comments.map((comment, i) => <Comment key={i} {...comment} />)}
             </CommentList>
@@ -64,52 +73,79 @@ const P = styled.div`
     line-height: 1.8rem;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 500;
-    margin-left: 4rem;
+    padding-bottom: 2rem;
+    /* margin-left: 4rem; */
     margin-top: 1rem;
     margin-bottom: 1rem;
-    border: 2px solid red;
+    border-bottom: 1px solid lightgrey;
 `
 const CommentList = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%; 
-    /* border: 1px solid */
 `
-const ActionsBox = styled.div`
-    border-top: 1px solid lightgrey;
-    margin-top: 1rem;
-    padding: 1rem;
+const Actions = styled.div`
     display: flex;
-    justify-content: space-evenly;
-
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 `
-
- /* const Like = styled.div`
-     background-image: url('./icons.png');
-     background-repeat: no-repeat;
+const Like = styled.div`
+     /* background-image: url('./icons.png'); */
+     /* background-repeat: no-repeat;
      background-size: 103px 371px;
      background-position: -21px -211px;
-     background-position:-33px -80px;
-     border: 1px solid lightgrey;
-     cursor: pointer;
-
-     width:20px;
-     height:20px;
+     background-position:-33px -80px; */
      display: flex;
-     justify-content: flex-end;
- `
- const Comment = styled.div`
-     background-image: url('./icons.png');
+     flex: 1;
+     cursor: pointer;
+     font-size: 1.4rem;
+     justify-content: center;
+    align-items: center;
+`
+const CommentAction = styled.div`
+     /* background-image: url('./icons.png');
      background-repeat: no-repeat;
      background-size: 104px 371px;
-     background-position: 0 -211px;
-     border: 1px solid lightgrey;
+     background-position: 0 -211px; */
      cursor: pointer;
-     font-size: 1.2rem;
-     padding: 1rem;
-     width: 10rem;
-
      display: flex;
-     justify-content: flex-end;
- ` */
+     flex: 1;
+     font-size: 1.4rem;
+     justify-content: center;
+    align-items: center;
+`
+const Share = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
+    font-size: 1.4rem;
+`
+const Reactions = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    padding: 1rem;
+    margin-top: 1rem;
+`
+const Icon = styled.div`
+    /* background-image: url('./icons.png');
+    background-position: 0 -300px;
+    background-size: 103px 371px;
+    background-repeat: no-repeat; */
+    background: lightgrey;
+    height: 1.6rem;;
+    width: 1.6rem;;
+`
+const Number = styled.div`
+    margin-left: 0.4rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: bold;
+`
 

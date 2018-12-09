@@ -20,7 +20,7 @@ const Box = styled.div`
     background-color: white;
     width: 100%;
     align-items: center;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 `
 const CommentBox = styled.div`
     display: flex;
@@ -44,10 +44,10 @@ const P = styled.div`
 const Img = styled.img`
     display: flex;
     /* background: #d8dce6 url('me.jpg') no-repeat center; */
-    background: #d8dce6 url('dog2.jpg') no-repeat center;
+    /* background: #d8dce6 url('dog2.jpg') no-repeat center; */
     object-fit: contain;
-    background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
+    /* background-size: 100% 100%;
+    -webkit-background-size: 100% 100%; */
     height: 4rem;
     width: 4rem;
     border-radius: 50%; 
