@@ -60,10 +60,12 @@ const Time = styled.div`
     margin-left: 5rem;
 `
 const P = styled.div`
-    font-size: 1.2rem;
-    /* margin-left: 6rem; */
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    margin-left: 4rem;
     margin-top: 1rem;
-    /* height: 100%; */
     margin-bottom: 1rem;
     border: 2px solid red;
 `
