@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import styled from "styled-components";
+import React, { Component } from 'react'
+import styled from "styled-components"
+import Friend from './Friend'
 
 export default class FriendsList extends Component {
     render() {
+        const { friends } = this.props
         return (
             <Box>
                 <Head>
@@ -10,12 +12,13 @@ export default class FriendsList extends Component {
                     <FindFriends>Find Friends</FindFriends>
                 </Head>
                 <Gallery>
+                    {friends.map((friend, i) => <Friend key={i} {...friend} />)}
+                    {/* <Item />
                     <Item />
                     <Item />
                     <Item />
                     <Item />
-                    <Item />
-                    <Item />
+                    <Item /> */}
                 </Gallery>
                 <Bottom>See All Friends</Bottom>
             </Box>
@@ -41,16 +44,16 @@ const Gallery = styled.div`
     flex-wrap: wrap;
     width: 100%;
 `
-const Item = styled.div`
-    background: #d8dce6 url('dog.jpg') no-repeat center;
-    background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    background-size: cover;
-    height: 13rem;
-    width: 33.333%;; 
-    border: .5px solid rgb(204, 208, 213);
-    margin-bottom: 2rem;
-`
+// const FriendItem = styled.div`
+//     /* background: #d8dce6 url('dog.jpg') no-repeat center; */
+//     background-size: 100% 100%;
+//     -webkit-background-size: 100% 100%;
+//     background-size: cover;
+//     height: 13rem;
+//     width: 33.333%;; 
+//     border: .5px solid rgb(204, 208, 213);
+//     margin-bottom: 2rem;
+// `
 
 const Bottom = styled.div`
     color: rgb(87, 107, 149);

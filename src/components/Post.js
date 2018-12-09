@@ -8,9 +8,11 @@ const Post = ({ user_id, last_name, first_name, avatar, timestamp, content, comm
         <Box>
             <Header>
                 <Img src={avatar} />
-                <UserName>{first_name} {last_name}</UserName>
+                <Meta>
+                    <UserName>{first_name} {last_name}</UserName>
+                    <Time>Published {timestamp} mins ago</Time>
+                </Meta>
             </Header>
-            <Time>{timestamp}</Time>
             <P>{content}</P>
             <Actions>
                 <Like>Like</Like>
@@ -24,7 +26,6 @@ const Post = ({ user_id, last_name, first_name, avatar, timestamp, content, comm
             <CommentList>
                 {comments.map((comment, i) => <Comment key={i} {...comment} />)}
             </CommentList>
-
         </Box>
     )
 }
@@ -37,7 +38,8 @@ const Box = styled.div`
     padding: 1rem;
     margin-bottom: 1rem;
     flex-direction: column;
-    border: 2px solid green;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgrey;
 `
 const Header = styled.div`
     display: flex;
@@ -48,8 +50,6 @@ const Img = styled.img`
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    /* background: #d8dce6 url('me.jpg') no-repeat center; */
-    /* background: #d8dce6 url('dog2.jpg') no-repeat center; */
     background-size: 100% 100%;
     -webkit-background-size: 100% 100%;
     height: 4.5rem;
@@ -61,12 +61,12 @@ const Img = styled.img`
 const UserName = styled.div`
     font-weight: bold;
     font-size: 1.4rem;
-    margin-left: 1rem;
+    padding-left: .5rem;
 `
 const Time = styled.div`
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: lightgrey;
-    margin-left: 5rem;
+    padding-left: .5rem;
 `
 const P = styled.div`
     font-size: 1.4rem;
@@ -74,10 +74,10 @@ const P = styled.div`
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 500;
     padding-bottom: 2rem;
-    /* margin-left: 4rem; */
     margin-top: 1rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid lightgrey;
+    padding-left: 4rem;
+    padding-right: 2rem;
 `
 const CommentList = styled.div`
     display: flex;
@@ -90,6 +90,8 @@ const Actions = styled.div`
     align-items: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+    border-top: 1px solid lightgrey;
+    padding-top: 1rem;
 `
 const Like = styled.div`
      /* background-image: url('./icons.png'); */
@@ -105,10 +107,6 @@ const Like = styled.div`
     align-items: center;
 `
 const CommentAction = styled.div`
-     /* background-image: url('./icons.png');
-     background-repeat: no-repeat;
-     background-size: 104px 371px;
-     background-position: 0 -211px; */
      cursor: pointer;
      display: flex;
      flex: 1;
@@ -128,8 +126,8 @@ const Reactions = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-top: 2px solid whitesmoke;
-    border-bottom: 2px solid whitesmoke;
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
     padding: 1rem;
     margin-top: 1rem;
 `
@@ -147,5 +145,11 @@ const Number = styled.div`
     cursor: pointer;
     font-size: 1.6rem;
     font-weight: bold;
+`
+const Meta = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
 `
 

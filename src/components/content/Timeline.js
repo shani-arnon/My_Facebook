@@ -13,6 +13,7 @@ class Timeline extends Component {
     state = {
         user_id: 3,
         posts: [],
+        friends: [],
         selected: 'feed',
         backIcon: {
             pickedY: -282,
@@ -21,16 +22,28 @@ class Timeline extends Component {
     }
 
     componentDidMount() {
-        console.log('componentDidMount')
-        const URL = `/api/posts/${this.state.user_id}`
-        console.log('URL', URL)
-        fetch(URL)
-            .then(res => {
-                return res.json()
-            })
-            .then(json => {
+        console.log('componentDidMount');
+
+        const POSTS_URL = `/api/posts/${this.state.user_id}`
+        console.log('POSTS_URL', POSTS_URL)
+        const FRIENDS_URL = `/api/friends/${this.state.user_id}`
+        console.log('FRIENDS_URL', FRIENDS_URL)
+
+        Promise.all([
+            fetch(POSTS_URL)
+                .then(res => {
+                    return res.json()
+                })
+            ,
+            fetch(FRIENDS_URL)
+                .then(res => {
+                    return res.json()
+                })
+        ])
+            .then(([posts, friends]) => {
                 this.setState({
-                    posts: json
+                    posts,
+                    friends
                 })
             })
             .catch(ex => {
@@ -91,7 +104,7 @@ class Timeline extends Component {
                 <Box>
                     <CreatePost />
                     <Images />
-                    <FriendsList />
+                    <FriendsList friends={this.state.friends} />
                     <PostsList posts={this.state.posts} />
                 </Box>
             </App >
