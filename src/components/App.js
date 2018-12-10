@@ -4,9 +4,6 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import { Redirect } from 'react-router';
-import { createBrowserHistory } from 'history';
-import history from '../history';
 import GlobalStyles from "../common/GlobalStyles";
 
 import Feed from "./content/Feed";

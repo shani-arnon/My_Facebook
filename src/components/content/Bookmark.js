@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import styled from "styled-components";
 import {
     BrowserRouter as Router,
-    Route,
     Link,
-    Redirect,
-    withRouter
 } from "react-router-dom"
 
 import TopBar from '../TopBar';
@@ -102,8 +99,6 @@ const App = styled.div`
     display: flex;
     flex: 1;
     flex-direction: column;
-`
-const Profile = styled.div`
 `
 
 const Box = styled.div`

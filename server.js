@@ -16,13 +16,10 @@ app.use(express.json())
 app.use(morgan('dev'))
 app.use(express.static(path.resolve(__dirname, 'build')))
 
-
-
 // test routing
 app.get('/api', (req, res) => {
     res.status(200).json({ express: 'Main API endpoint' });
 });
-
 
 //api routing
 
@@ -30,10 +27,8 @@ app.get('/api', (req, res) => {
 app.use('/api/posts', posts_router)
 // app.use('api/timeline/:id', user_router);
 
-
+// //List of Friends by user
 app.use('/api/friends', friends_router)
-
-
 
 // //List of Posts relevant for user
 // app.use('/api/newsfeed/:id', user_router)
@@ -44,9 +39,6 @@ app.use('/api/friends', friends_router)
 // })
 // //event Returns Event object
 // app.use('/api/event/:id', user_router)
-
-
-
 
 // central error handling
 app.use((err, req, res, next) => {

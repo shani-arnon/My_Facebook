@@ -85,25 +85,10 @@ const ExtraBox = styled.ul`
     display: flex;
     list-style: none;
     justify-content: space-evenly;
-    /* border: 2px solid red; */
-`
-const Extra = styled.li`
-    /* background: lightgray; */
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-left: 0.4rem;
-    padding-top: 0.5rem;
-    border-radius: 1.5rem;
-    font-size: 1.4rem;
-    /* color:rgb(0, 0, 238);    */
-    /* color: darkblue; */
-    /* color: darkslategray; */
-
     cursor: pointer;
     font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
-
+    /* border: 2px solid red; */
 `
-
 const Photo = styled.div`
     color: #576b95;
     font-size: 14px;
@@ -112,7 +97,7 @@ const Photo = styled.div`
     text-align: center;
     cursor: pointer;
     flex: 1;
-    `
+`
 
 const CheckIn = styled.div`
     border-right: 1px solid #ccd0d5;
@@ -136,13 +121,13 @@ const Activity = styled.div`
     cursor: pointer;
     flex: 1;
 `
-const PhotoIcon = styled.div`
-    background-image: url('/icons.png');
-    background-size: 109px 176px;
-    background-repeat: no-repeat;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-position: -34px -133px;
-`
+// const PhotoIcon = styled.div`
+//     background-image: url('/icons.png');
+//     background-size: 109px 176px;
+//     background-repeat: no-repeat;
+//     display: inline-block;
+//     width: 16px;
+//     height: 16px;
+//     background-position: -34px -133px;
+// `
 

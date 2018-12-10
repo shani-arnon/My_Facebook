@@ -1,8 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import c from '../common/constants'
-// import logo from "./logo.svg"
-// #363b5d
 
 const ActionBar = ({ children }) => {
     return (
