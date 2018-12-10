@@ -19,10 +19,9 @@ router.get('/', md(async (req, res) => {
 
 // '/api/friends/:user_id'
 router.get('/:user_id', md(async (req, res) => {
-    const data = await read_file(path.resolve(__dirname, '../posts_data.json'), 'utf-8')
+    const data = await read_file(path.resolve(__dirname, '../friends_data.json'), 'utf-8')
     const friends = JSON.parse(data)
-    const user_friends = friends.filter(post => friends.user_id == req.params.user_id)
-    res.json(user_friends)
+    res.json(friends.slice(0, 6))
 }))
 
 module.exports = router

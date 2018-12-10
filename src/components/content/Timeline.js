@@ -41,6 +41,9 @@ class Timeline extends Component {
                 })
         ])
             .then(([posts, friends]) => {
+                console.log('friend', friends.length)
+                console.log('posts', posts.length)
+
                 this.setState({
                     posts,
                     friends
