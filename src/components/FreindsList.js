@@ -58,8 +58,7 @@ const Gallery = styled.div`
 const Bottom = styled.div`
     color: rgb(87, 107, 149);
     margin-top: 1rem;
-    margin-bottom: 1rem;
-
+    margin-bottom: 2rem;
 `
 const Friends = styled.div``
 const FindFriends = styled.div``

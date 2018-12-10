@@ -3,26 +3,29 @@ import styled from "styled-components";
 import Comment from './Comment'
 
 const Post = ({ user_id, last_name, first_name, avatar, timestamp, content, comments, reactions }) => {
-
+    let start = new Date().getTime();
     return (
         <Box>
             <Header>
                 <Img src={avatar} />
                 <Meta>
                     <UserName>{first_name} {last_name}</UserName>
-                    <Time>Published {timestamp} mins ago</Time>
+                    <Time>Published {new Date().getTime() - start + 10} mins ago</Time>
                 </Meta>
             </Header>
             <P>{content}</P>
+            <Reactions>
+                <Icons>
+                    <LikeReaction />
+                    <HeartReaction />
+                </Icons>
+                <Number>{comments.length} Comments</Number>
+            </Reactions>
             <Actions>
                 <Like>Like</Like>
                 <CommentAction>Comment</CommentAction>
                 <Share>Share</Share>
             </Actions>
-            <Reactions>
-                <Icon />
-                <Number>5</Number>
-            </Reactions>
             <CommentList>
                 {comments.map((comment, i) => <Comment key={i} {...comment} />)}
             </CommentList>
@@ -75,7 +78,6 @@ const P = styled.div`
     font-weight: 500;
     padding-bottom: 2rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
     padding-left: 4rem;
     padding-right: 2rem;
 `
@@ -89,30 +91,31 @@ const Actions = styled.div`
     justify-content: center;
     align-items: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    border-top: 1px solid lightgrey;
-    padding-top: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid gainsboro;
+    border-top: 1px solid gainsboro;
 `
 const Like = styled.div`
-     /* background-image: url('./icons.png'); */
-     /* background-repeat: no-repeat;
-     background-size: 103px 371px;
-     background-position: -21px -211px;
-     background-position:-33px -80px; */
-     display: flex;
-     flex: 1;
-     cursor: pointer;
-     font-size: 1.4rem;
-     justify-content: center;
+    display: flex;
+    flex: 1;
+    cursor: pointer;
+    font-size: 1.2rem;
+    justify-content: center;
     align-items: center;
+    color: #616770;
+    font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
+    font-weight: bold;
 `
 const CommentAction = styled.div`
-     cursor: pointer;
-     display: flex;
-     flex: 1;
-     font-size: 1.4rem;
-     justify-content: center;
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    font-size: 1.2rem;
+    justify-content: center;
     align-items: center;
+    color: #616770;
+    font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
+    font-weight: bold;
 `
 const Share = styled.div`
     display: flex;
@@ -120,31 +123,42 @@ const Share = styled.div`
     align-items: center;
     flex: 1;
     cursor: pointer;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    color: #616770;
+    font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
+    font-weight: bold;
+
 `
 const Reactions = styled.div`
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    border-top: 1px solid whitesmoke;
-    border-bottom: 1px solid whitesmoke;
     padding: 1rem;
-    margin-top: 1rem;
 `
-const Icon = styled.div`
-    /* background-image: url('./icons.png');
-    background-position: 0 -300px;
-    background-size: 103px 371px;
-    background-repeat: no-repeat; */
-    background: lightgrey;
+const Icons = styled.div`
+    display: flex;
+    /* border: 2px solid; */
+`
+const LikeReaction = styled.div`
+    background-image: url('./like_reaction.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 1.6rem;;
+    width: 1.6rem;;
+`
+const HeartReaction = styled.div`
+    background-image: url('./heart_reaction.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     height: 1.6rem;;
     width: 1.6rem;;
 `
 const Number = styled.div`
-    margin-left: 0.4rem;
     cursor: pointer;
-    font-size: 1.6rem;
-    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    text-align: right;
+    color: #616770;
 `
 const Meta = styled.div`
     display: flex;

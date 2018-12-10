@@ -36,9 +36,11 @@ const P = styled.div`
     flex-direction: column;
     overflow: hidden;
     padding: 1rem;;
-    font-size: 1.2rem;
-    line-height: 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
     background: gainsboro;
+    color: black;
+    font-weight: 500;
     border-radius: 1.8rem;    
 `
 const Img = styled.img`
