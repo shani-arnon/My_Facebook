@@ -6,6 +6,9 @@ import Links from '../Links';
 import CreatePost from "../CreatePost";
 import PostsList from '../PostsList';
 
+
+
+
 export default class Feed extends Component {
     state = {
         user_id: 2,
@@ -32,9 +35,6 @@ export default class Feed extends Component {
     render() {
         return (
             <App>
-                <TopBar>
-                    <Links />
-                </TopBar>
                 <Box>
                     <CreatePost />
                     <PostsList posts={this.state.posts} />

@@ -5,6 +5,8 @@ import {
   Switch
 } from 'react-router-dom';
 import GlobalStyles from "../common/GlobalStyles";
+import styled from "styled-components";
+
 
 import Feed from "./content/Feed";
 import Friends from "./content/Friends";
@@ -14,11 +16,21 @@ import Search from "./content/Search";
 import Timeline from "./content/Timeline";
 import Bookmark from './content/Bookmark';
 
+import TopBar from './TopBar'
+import TopBarDesktop from './TopBarDesktop'
+
+// import Links from './Links';
+// import LinksDesktop './LinksDesktop';
+
 class App extends Component {
   render() {
     return (
       <HashRouter hashType="slash">
-        <div className="app">
+        <div>
+          <TopBarDesktop />
+          <TopBar />
+
+
           <Switch>
             <Route exact={true} path="/" component={Feed} />
             <Route path="/friends" component={Friends} />
@@ -29,6 +41,8 @@ class App extends Component {
             <Route path="/timeline" component={Timeline} />
             {/* <Route component={NoMatch} /> */}
           </Switch>
+
+
           <GlobalStyles />
         </div>
       </HashRouter>
@@ -36,3 +50,23 @@ class App extends Component {
   }
 }
 export default App;
+const Text = styled.div`
+
+  position: absolute;
+  z-index: 900;
+  font-size: 3rem;
+  @media (min-width: 700px) {
+    display: none;
+  }
+
+`
+const TextD = styled.div`
+  display: none;
+  position: absolute;
+  z-index: 900;
+  top: 3rem;
+  font-size: 3rem;
+  @media (min-width: 700px) {
+    display: block;
+  }
+`
