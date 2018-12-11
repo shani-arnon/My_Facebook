@@ -2,14 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
-
 class Links extends Component {
     state = {
         selected: 'feed',
-        // feed: {
-        //     pickedY: -589,
-        //     normalY: -568,
-        // },
         friends: {
             pickedY: -379,
             normalY: -358
@@ -25,25 +20,18 @@ class Links extends Component {
         search: {
             pickedY: -463,
             normalY: -442
-        },
-        // bookmark: {
-        //     pickedY: -547,
-        //     normalY: -526
-        // }
+        }
     }
-
     selectTab = (tab) => {
         this.setState({
             selected: tab
         })
     }
-
     getPosY(tab) {
         const selected = this.state.selected;
         const current = this.state[tab];
         return selected === tab ? current.pickedY : current.normalY;
     }
-
     render() {
         return (
             <Nav>
@@ -67,7 +55,6 @@ class Links extends Component {
                             Create
                     </Create>
                     </TabBox>
-
                     <IconsBox>
                         <Item key="friends" onClick={() => this.selectTab('friends')}>
                             <Link to="/friends"><NavIcon posY={() => this.getPosY('friends')} /></Link>
@@ -79,12 +66,6 @@ class Links extends Component {
                             <Link to="/notifications"><NavIcon posY={() => this.getPosY('notifications')} /></Link>
                         </Item>
                     </IconsBox>
-                    {/* <Item key="search" onClick={() => this.selectTab('search')}>
-                    <Link to="/search"><NavIcon posY={() => this.getPosY('search')} /></Link>
-                </Item>
-                <Item key="bookmark" onClick={() => this.selectTab('bookmark')}>
-                    <Link to="/bookmark"><NavIcon posY={() => this.getPosY('bookmark')} /></Link>
-                </Item> */}
                 </Box>
             </Nav>
         )
@@ -92,6 +73,7 @@ class Links extends Component {
 
 }
 export default Links
+
 const Nav = styled.div`
     display: none;
     background-color:#4267b2;  
@@ -100,7 +82,7 @@ const Nav = styled.div`
     width: 100%;
     @media (min-width: 700px) {
         display: block;
-  }
+    }
 `
 const Box = styled.ul`
     display: flex;
@@ -120,7 +102,6 @@ const TabBox = styled.div`
     justify-content: space-evenly;
     align-items: center;
     width: 25%;
-    /* border: 1px solid white; */
 `
 const FBIcon = styled.div`
     background-image: url('/facebook_white_64.png');
@@ -155,16 +136,16 @@ const Home = styled.div`
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
     padding-right: 1rem;
-    /* padding-left: 1rem; */
-    border-right: 1px solid #707070;
+    padding-left: 1rem;
+    border-right: 1px solid #29487d;
+    border-left: 1px solid #29487d;
     height: 2.3rem;
-
 `
 const User = styled.div`
     display: flex;
@@ -172,12 +153,11 @@ const User = styled.div`
     justify-content: space-evenly;
     width: 8.5rem;
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
-    border-right: 1px solid #707070;
 `
 const Img = styled.div`
     background: #d8dce6 url('dog2.jpg') no-repeat center;
@@ -190,17 +170,17 @@ const Img = styled.div`
 const Create = styled.div`
     color: white;
     height: 2.3rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
-    border-right: 1px solid #707070;
+    border-right: 1px solid #29487d;
     padding-right: 1rem;
+    padding-left: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid white; */
 `
 
 const NavIcon = styled.div`
@@ -214,8 +194,8 @@ const NavIcon = styled.div`
 `
 const IconsBox = styled.div`
     display: flex;
-    width: 20%;
-    /* border-right: 1px solid #707070; */
+    margin-left: 1.5rem;
+    width: 15%;
 `
 const Messenger = styled.div`
     background-image: url('./icons.png');

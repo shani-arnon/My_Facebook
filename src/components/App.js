@@ -19,9 +19,6 @@ import Bookmark from './content/Bookmark';
 import TopBar from './TopBar'
 import TopBarDesktop from './TopBarDesktop'
 
-// import Links from './Links';
-// import LinksDesktop './LinksDesktop';
-
 class App extends Component {
   render() {
     return (
@@ -29,8 +26,6 @@ class App extends Component {
         <div>
           <TopBarDesktop />
           <TopBar />
-
-
           <Switch>
             <Route exact={true} path="/" component={Feed} />
             <Route path="/friends" component={Friends} />
@@ -39,14 +34,11 @@ class App extends Component {
             <Route path="/search" component={Search} />
             <Route path="/bookmark" component={Bookmark} />
             <Route path="/timeline" component={Timeline} />
-            {/* <Route component={NoMatch} /> */}
           </Switch>
-
-
           <GlobalStyles />
         </div>
       </HashRouter>
-    );
+    )
   }
 }
 export default App;

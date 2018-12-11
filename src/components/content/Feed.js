@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 
-import TopBar from '../TopBar';
-import Links from '../Links';
 import CreatePost from "../CreatePost";
 import PostsList from '../PostsList';
-
-
-
 
 export default class Feed extends Component {
     state = {
@@ -35,10 +30,12 @@ export default class Feed extends Component {
     render() {
         return (
             <App>
-                <Box>
+                {/* <Sidebar /> */}
+                <Main>
                     <CreatePost />
                     <PostsList posts={this.state.posts} />
-                </Box>
+                </Main>
+
 
             </App>
         );
@@ -50,9 +47,15 @@ const App = styled.div`
     display: flex;
     flex: 1;
     background: #e8e8e8;
+    /* ${Sidebar}{
+        display:none;
+        @media (min-width: 700px) {
+            display: block;
+        }
+    } */
 `
 
-const Box = styled.div`
+const Main = styled.div`
     border: 1px solid #f6f7f8;
     display: flex;
     flex-direction: column;
