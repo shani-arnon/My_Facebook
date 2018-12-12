@@ -101,7 +101,7 @@ const Actions = styled.div`
     justify-content: center;
     align-items: center;
     align-items: center;
-    padding: 1rem;
+    padding: .5rem;
     border-bottom: 1px solid gainsboro;
     border-top: 1px solid gainsboro;
 `

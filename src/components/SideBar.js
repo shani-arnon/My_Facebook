@@ -94,7 +94,8 @@ const Messenger = styled.div`
     display: flex;
 `
 const MessengerIcon = styled.div`
-    background: lightblue;
+    background: url('sidebar_messenger.png') no-repeat;
+    background-size: 2rem 2rem;
     height: 2rem;
     width: 2rem;
     margin-right: .5rem;
@@ -104,7 +105,8 @@ const Watch = styled.div`
     display: flex;
 `
 const WatchIcon = styled.div`
-    background: lightblue;
+    background: url('sidebar_watch.png') no-repeat;
+    background-size: 2rem 2rem;
     height: 2rem;
     width: 2rem;
     margin-right: .5rem;
@@ -114,18 +116,19 @@ const Marketplace = styled.div`
     display: flex;
 `
 const MarketplaceIcon = styled.div`
-    background: lightblue;
+    background: url('sidebar_marketplace.png') no-repeat;
+    background-size: 2rem 2rem;
     height: 2rem;
     width: 2rem;
     margin-right: .5rem;
 `
 const Explore = styled.div`
     display: flex;
-    height:15rem;
+    height:20rem;
     flex-direction: column;
     flex: 1;
     justify-content: space-between;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 500;
     padding: 1rem;
     margin-left: 2rem;
@@ -133,36 +136,47 @@ const Explore = styled.div`
 const Title = styled.div``
 const Events = styled.div`
     display: flex;
+    align-items: center;
+
 `
 const EventIcon = styled.div`
-    background: lightblue;
+    background: url('sidebar_events.png') no-repeat;
+    background-size: 2rem 2rem;
     height: 2rem;
     width: 2rem;
     margin-right: .5rem;
 `
 const Pages = styled.div`
     display: flex;
+    align-items: center;
+
 `
 const PageIcon = styled.div`
-    background: lightblue;
+    background: url('sidebar_marketplace.png') no-repeat;
+    background-size: 2rem 2rem;
     height: 2rem;
     width: 2rem;
     margin-right: .5rem;
 `
 const Groups = styled.div`
     display: flex;
+    align-items: center;
 `
 const GroupIcon = styled.div`
-    background: lightblue;
+    background: url('sidebar_group.png') no-repeat;
+    background-size: 2rem 2rem;
     height: 2rem;
     width: 2rem;
     margin-right: .5rem;
 `
 const LiveDemo = styled.div`
     display: flex;
+    align-items: center;
+
 `
 const LiveDemoIcon = styled.div`
-    background: lightblue;
+    background: url('sidebar_live.png') no-repeat;
+    background-size: 2rem 2rem;
     height: 2rem;
     width: 2rem;
     margin-right: .5rem;
