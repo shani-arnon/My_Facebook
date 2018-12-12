@@ -18,13 +18,23 @@ const Post = ({ user_id, last_name, first_name, avatar, timestamp, content, comm
                 <Icons>
                     <LikeReaction />
                     <HeartReaction />
+                    {reactions.length}
                 </Icons>
                 <Number>{comments.length} Comments</Number>
             </Reactions>
             <Actions>
-                <Like>Like</Like>
-                <CommentAction>Comment</CommentAction>
-                <Share>Share</Share>
+                <Like>
+                    <LikeIcon />
+                    Like
+                </Like>
+                <CommentAction>
+                    <CommentIcon />
+                    Comment
+                </CommentAction>
+                <Share>
+                    <ShareIcon />
+                    Share
+                </Share>
             </Actions>
             <CommentList>
                 {comments.map((comment, i) => <Comment key={i} {...comment} />)}
@@ -106,6 +116,13 @@ const Like = styled.div`
     font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
     font-weight: bold;
 `
+const LikeIcon = styled.div`
+    background: url('like_white.png') no-repeat;
+    background-size: 2.5rem 2.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* padding-right: 1.5rem; */
+`
 const CommentAction = styled.div`
     cursor: pointer;
     display: flex;
@@ -117,6 +134,13 @@ const CommentAction = styled.div`
     font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
     font-weight: bold;
 `
+const CommentIcon = styled.div`
+    background: url('comment_white.png') no-repeat;
+    background-size: 2.5rem 2.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+`
+
 const Share = styled.div`
     display: flex;
     justify-content: center;
@@ -127,8 +151,14 @@ const Share = styled.div`
     color: #616770;
     font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
     font-weight: bold;
-
 `
+const ShareIcon = styled.div`
+    background: url('share_white.png') no-repeat;
+    background-size: 3rem 3rem;
+    height: 3rem;
+    width: 3rem;
+`
+
 const Reactions = styled.div`
     display: flex;
     justify-content: space-between;
@@ -137,7 +167,10 @@ const Reactions = styled.div`
 `
 const Icons = styled.div`
     display: flex;
-    /* border: 2px solid; */
+    cursor: pointer;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #616770;
 `
 const LikeReaction = styled.div`
     background-image: url('./like_reaction.png');

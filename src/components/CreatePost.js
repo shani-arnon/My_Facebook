@@ -13,14 +13,17 @@ const CreatePost = () => {
             </PostBox>
             <ExtraBox>
                 <Photo>
+                    <PhotoIcon />
                     Photo
-                    {/* <PhotoIcon /> */}
                 </Photo>
                 <CheckIn>
                     <CheckInIcon />
                     Check In
                 </CheckIn>
-                <Activity>Life Event</Activity>
+                <Activity>
+                    <ActivityIcon />
+                    Life Event
+                </Activity>
             </ExtraBox>
         </Box>
     );
@@ -88,16 +91,6 @@ const ExtraBox = styled.ul`
     font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
     /* border: 2px solid red; */
 `
-const Photo = styled.div`
-    color: #576b95;
-    font-size: 14px;
-    line-height: 24px;
-    margin: 8px 0;
-    text-align: center;
-    cursor: pointer;
-    flex: 1;
-`
-
 const CheckIn = styled.div`
     border-right: 1px solid #ccd0d5;
     border-left: 1px solid #ccd0d5;
@@ -111,7 +104,6 @@ const CheckIn = styled.div`
     display: flex;
     align-items:center;
     justify-content: center;
-    /* border: 1px solid; */
 `
 const CheckInIcon = styled.div`
     background: url('checkin.png') no-repeat;
@@ -119,9 +111,7 @@ const CheckInIcon = styled.div`
     height: 1.7rem;
     width: 1.5rem;
     padding-right: 1.5rem;
-    /* border: 1px solid; */
 `
-
 const Activity = styled.div`
     color: #576b95;
     font-size: 14px;
@@ -130,14 +120,35 @@ const Activity = styled.div`
     text-align: center;
     cursor: pointer;
     flex: 1;
+    display: flex;
+    align-items:center;
+    justify-content: center;
 `
-// const PhotoIcon = styled.div`
-//     background-image: url('/icons.png');
-//     background-size: 109px 176px;
-//     background-repeat: no-repeat;
-//     display: inline-block;
-//     width: 16px;
-//     height: 16px;
-//     background-position: -34px -133px;
-// `
+const ActivityIcon = styled.div`
+    background: url('flag.png') no-repeat;
+    background-size: 1.5rem 1.7rem;
+    height: 1.7rem;
+    width: 1.5rem;
+    padding-right: 1.5rem;
+`
+const Photo = styled.div`
+    color: #576b95;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 8px 0;
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+`
+const PhotoIcon = styled.div`
+    background: url('picture.png') no-repeat;
+    background-size: 1.5rem 1.7rem;
+    height: 1.7rem;
+    width: 1.5rem;
+    padding-right: 1.5rem;
+    /* border: 1px solid; */
+`
 
