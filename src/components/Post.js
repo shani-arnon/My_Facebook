@@ -143,8 +143,8 @@ const LikeReaction = styled.div`
     background-image: url('./like_reaction.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 1.6rem;;
-    width: 1.6rem;;
+    height: 1.6rem;
+    width: 1.6rem;
 `
 const HeartReaction = styled.div`
     background-image: url('./heart_reaction.png');

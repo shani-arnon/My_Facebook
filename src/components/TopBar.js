@@ -1,26 +1,7 @@
-// import React from "react";
-// import styled from "styled-components";
 import c from '../common/constants'
-
-// const TopBar = ({ children }) => {
-//     return (
-//         <Nav>
-//             <h5>{children}</h5>
-//         </Nav>
-//     )
-// }
-// export default TopBar;
-
-
-// const Nav = styled.div`
-//     background-color:${c.fb_blue};  
-//     position: fixed;
-//     top: 0;
-//     width: 100%;
-// `
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import styled from "styled-components";
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import styled from "styled-components"
 
 class Links extends Component {
     state = {
@@ -66,7 +47,6 @@ class Links extends Component {
     render() {
         return (
             <Nav>
-
                 <Box>
                     <Item key="feed" onClick={() => this.selectTab('feed')}>
                         <Link to="/"><NavIcon posY={() => this.getPosY('feed')} /></Link>
@@ -98,13 +78,12 @@ export default Links
 const Nav = styled.div`
     background-color:${c.fb_blue};  
     position: fixed;
-    top: 0;
     width: 100%;
+    z-index: 500;
     @media (min-width: 700px) {
         display: none;
     }
 `
-
 const Box = styled.ul`
     display: flex;
     height:4rem;
@@ -118,7 +97,6 @@ const Item = styled.li`
     /* background-color: #576b95; */
 `
 const NavIcon = styled.div`
-    /* border: 2px solid yellowgreen  */
     background-image: url('./icons.png');
     background-repeat: no-repeat;
     background-size: 31px 1309px;
@@ -132,7 +110,6 @@ const Messenger = styled.div`
     background-repeat: no-repeat;
     background-size: 31px 1274px;
     background-position: 0 ${p => p.posY}px; 
-
     height: 20px;
     width: 20px;
     cursor: pointer;

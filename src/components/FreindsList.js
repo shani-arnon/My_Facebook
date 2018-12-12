@@ -13,12 +13,6 @@ export default class FriendsList extends Component {
                 </Head>
                 <Gallery>
                     {friends.map((friend, i) => <Friend key={i} {...friend} />)}
-                    {/* <Item />
-                    <Item />
-                    <Item />
-                    <Item />
-                    <Item />
-                    <Item /> */}
                 </Gallery>
                 <Bottom>See All Friends</Bottom>
             </Box>
@@ -41,19 +35,9 @@ const Box = styled.div`
 
 const Gallery = styled.div`
     display: flex;
+    flex: 1;
     flex-wrap: wrap;
-    width: 100%;
 `
-// const FriendItem = styled.div`
-//     /* background: #d8dce6 url('dog.jpg') no-repeat center; */
-//     background-size: 100% 100%;
-//     -webkit-background-size: 100% 100%;
-//     background-size: cover;
-//     height: 13rem;
-//     width: 33.333%;; 
-//     border: .5px solid rgb(204, 208, 213);
-//     margin-bottom: 2rem;
-// `
 
 const Bottom = styled.div`
     color: rgb(87, 107, 149);
@@ -69,5 +53,4 @@ const Head = styled.div`
     cursor: pointer;
     font-weight: 500;
     padding: 1rem;
-
 `

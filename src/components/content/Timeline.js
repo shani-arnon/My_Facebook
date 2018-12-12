@@ -171,7 +171,6 @@ const MetaBtn = styled.div`
     font-size: 1.4rem;
     color: black;
 `
-
 const App = styled.div`
     display: flex;
     flex: 1;
@@ -195,8 +194,8 @@ const Header = styled.div`
     text-overflow: ellipsis;
     font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
     background-color:#3b5998;  
+    z-index: 500;
 `
-
 const Item = styled.li`
     list-style: none;
     flex:1;

@@ -15,13 +15,12 @@ const CreatePost = () => {
                 <Photo>
                     Photo
                     {/* <PhotoIcon /> */}
-                    {/* <PhotoIcon posY={() => this.getPosY('photoIcon')/> */}
                 </Photo>
                 <CheckIn>
+                    <CheckInIcon />
                     Check In
                 </CheckIn>
                 <Activity>Life Event</Activity>
-                {/* <Extra>Tag Friends</Extra> */}
             </ExtraBox>
         </Box>
     );
@@ -103,13 +102,24 @@ const CheckIn = styled.div`
     border-right: 1px solid #ccd0d5;
     border-left: 1px solid #ccd0d5;
     color: #576b95;
-
     font-size: 14px;
     line-height: 24px;
     margin: 8px 0;
     text-align: center;
     cursor: pointer;
     flex: 1;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    /* border: 1px solid; */
+`
+const CheckInIcon = styled.div`
+    background: url('checkin.png') no-repeat;
+    background-size: 1.5rem 1.7rem;
+    height: 1.7rem;
+    width: 1.5rem;
+    padding-right: 1.5rem;
+    /* border: 1px solid; */
 `
 
 const Activity = styled.div`

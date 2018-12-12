@@ -99,9 +99,9 @@ const Item = styled.li`
 `
 const TabBox = styled.div`
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    width: 25%;
+    width: 30%;
+    /* border: 1px solid; */
 `
 const FBIcon = styled.div`
     background-image: url('/facebook_white_64.png');
@@ -133,56 +133,57 @@ const Icon = styled.div`
 `
 const Home = styled.div`
     display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 500;
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
-    padding-right: 1rem;
-    padding-left: 1rem;
     border-right: 1px solid #29487d;
     border-left: 1px solid #29487d;
     height: 2.3rem;
+    /* border: 1px solid; */
 `
 const User = styled.div`
     display: flex;
+    flex: 1;
     align-items: center;
-    justify-content: space-evenly;
-    width: 8.5rem;
+    justify-content: center;
     color: white;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 500;
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
+    /* border: 1px solid; */
 `
 const Img = styled.div`
     background: #d8dce6 url('dog2.jpg') no-repeat center;
     background-size: 100% 100%;
     display: flex;
-    height: 2.3rem;
-    width: 2.3rem;
+    height: 2.1rem;
+    width: 2.1rem;
     border-radius: 50%; 
+    margin-right: .5rem;
 `
 const Create = styled.div`
     color: white;
     height: 2.3rem;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 500;
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
     border-right: 1px solid #29487d;
-    padding-right: 1rem;
-    padding-left: 1rem;
     display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
+    /* border: 1px solid; */
 `
-
 const NavIcon = styled.div`
     background-image: url('./icons.png');
     background-repeat: no-repeat;
@@ -211,6 +212,6 @@ const Input = styled.input`
     padding:.5rem;
     height: 2.7rem;
     margin-top: .7rem;
-    width: 45%;
+    width: 40%;
 `
 

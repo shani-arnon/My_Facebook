@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import styled from "styled-components";
+import React, { Component } from 'react'
+import styled from "styled-components"
 
-import CreatePost from "../CreatePost";
-import PostsList from '../PostsList';
+import CreatePost from "../CreatePost"
+import PostsList from '../PostsList'
+import SideBar from '../SideBar'
+
 
 export default class Feed extends Component {
     state = {
@@ -30,31 +32,31 @@ export default class Feed extends Component {
     render() {
         return (
             <App>
-                {/* <Sidebar /> */}
+                <SideBarWrap>
+                    <StyledSideBar />
+                </SideBarWrap>
                 <Main>
                     <CreatePost />
                     <PostsList posts={this.state.posts} />
                 </Main>
-
-
             </App>
         );
     }
 }
 
-
+const StyledSideBar = styled(SideBar)``;
+const SideBarWrap = styled.div`
+    ${StyledSideBar}{
+        @media (min-width: 700px) {
+            display: flex;
+        } 
+    }
+`
 const App = styled.div`
     display: flex;
     flex: 1;
     background: #e8e8e8;
-    /* ${Sidebar}{
-        display:none;
-        @media (min-width: 700px) {
-            display: block;
-        }
-    } */
 `
-
 const Main = styled.div`
     border: 1px solid #f6f7f8;
     display: flex;
@@ -62,3 +64,4 @@ const Main = styled.div`
     margin-top: 3rem;
     flex: 1;
 `
+
