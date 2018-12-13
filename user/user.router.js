@@ -14,6 +14,10 @@ router.get('/timeline/:id', md(async (req, res) => {
     res.status(200).json(user)
 }));
 
+// router.get('/', md(async (req, res) => {
+//     res.status(200).json()
+// }));
+
 router.get('/newsfeed/:id', md(async (req, res) => {
     const user = await User.findById(req.params.id)
     if (!user) throw new Error('no user found with id of' + req.params.id)

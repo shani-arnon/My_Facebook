@@ -20,16 +20,16 @@ const Box = styled.div`
     display:none;
     flex-direction: column;
     width:100%;
+    height: 100%;
     background: #e9ebee;
     border-left: 1px solid rgb(204, 208, 213); 
-    height: 100%;
-    width: 100%;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.2rem;
     line-height: 1.6rem;
     color: #1d2129;
     margin-top: 4rem; 
     padding: 1.5rem;
+
 `
 const Gallery = styled.div`
     display: flex;

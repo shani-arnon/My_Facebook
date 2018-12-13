@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import Timeline from '../components/content/Timeline';
+import Feed from '../components/content/Feed';
 class Links extends Component {
     state = {
         selected: 'feed',
-        timeline_page: {
+        feed: {
+            new_path: '/feed',
+            component: Feed
+        },
+        timeline: {
             new_path: '/timeline',
             component: Timeline
         },
@@ -30,13 +35,17 @@ class Links extends Component {
         this.setState({
             selected: tab
         })
-        window.location.href = `http://localhost:3000/#/timeline`;
+        return window.location.href = `http://localhost:3000/#/${tab}`
+        // window.location.href = feed;
     }
     getPosY(tab) {
         const selected = this.state.selected;
         const current = this.state[tab];
         return selected === tab ? current.pickedY : current.normalY;
     }
+    //     <Item key="feed" onClick={() => this.selectTab('feed')}>
+    //     <Link to="/"><NavIcon posY={() => this.getPosY('feed')} /></Link>
+    // </Item>
     render() {
         return (
             <Nav>
@@ -48,17 +57,15 @@ class Links extends Component {
                         <Icon />
                     </Search>
                     <TabBox>
-                        <User key="timeline_page" onClick={() => this.selectTab('timeline_page')}><Link to='/timeline' ></Link>
+                        <User key="timeline" onClick={() => this.selectTab('timeline')}><Link to='/timeline' ></Link>
                             <Img />
                             Shani
-                    </User>
+                        </User>
                         <Home key="feed" onClick={() => this.selectTab('feed')}>
                             Home
-                    <Link to="/"></Link>
+                            <Link to="/feed"></Link>
                         </Home>
-                        <Create>
-                            Create
-                    </Create>
+                        <Create>Create</Create>
                     </TabBox>
                     <IconsBox>
                         <Item key="friends" onClick={() => this.selectTab('friends')}>
@@ -81,17 +88,19 @@ export default Links
 
 const Nav = styled.div`
     display: none;
-    background-color:#4267b2;  
+    overflow: hidden; 
     position: fixed;
     top: 0;
     width: 100%;
+    background-color:#4267b2;  
+    z-index: 900;
     @media (min-width: 700px) {
         display: block;
     }
 `
 const Box = styled.ul`
     display: flex;
-    height:4rem;
+    height:4.5rem;
     border-bottom: 1px solid #29487d;
 `
 const Item = styled.li`

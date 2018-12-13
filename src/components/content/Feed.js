@@ -68,22 +68,26 @@ const SideBarWrap = styled.div`
     ${StyledSideBar}{
         @media (min-width: 700px) {
             display: flex;
+	        width: 100%;
+	        position: sticky;
+	        top: 6rem;
         } 
     }
 `
 const FriendsList = styled(FriendsListSide)``;
 const FriendsWrap = styled.div`
+    right: 0;
+    position: sticky;
     ${FriendsList}{
         @media (min-width: 700px) {
             display: flex;
+            
         } 
     }
 `
 const App = styled.div`
     display: flex;
-    flex: 1;
     background-color: rgb(233, 235, 238);
-
 `
 const Main = styled.div`
     border: 1px solid #f6f7f8;
@@ -91,5 +95,6 @@ const Main = styled.div`
     flex-direction: column;
     margin-top: 3rem;
     flex: 1;
+    overflow: auto;
 `
 

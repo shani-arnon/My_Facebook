@@ -26,7 +26,7 @@ class App extends Component {
           <TopBarDesktop />
           <TopBar />
           <Switch>
-            <Route exact={true} path="/" component={Feed} />
+            <Route exact={true} path="/feed" component={Feed} />
             <Route path="/friends" component={Friends} />
             <Route path="/messenger" component={Messenger} />
             <Route path="/notifications" component={Notifications} />

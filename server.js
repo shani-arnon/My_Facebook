@@ -10,6 +10,7 @@ const { NODE_ENV, API_PORT, API_HOST } = process.env
 
 const posts_router = require('./services/posts/posts.router');
 const friends_router = require('./services/friends/friends.router');
+const user_router = require('./user/user.router');
 
 const app = express()
 app.use(express.json())
@@ -31,7 +32,7 @@ app.use('/api/posts', posts_router)
 app.use('/api/friends', friends_router)
 
 // //List of Posts relevant for user
-// app.use('/api/newsfeed/:id', user_router)
+app.use('/api/', user_router)
 
 
 // app.get('/api/event/:id', (req, res) => {

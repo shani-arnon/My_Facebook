@@ -9,7 +9,7 @@ class SideBar extends React.Component {
                     <Img />
                     <UserName>Shani Arnon</UserName>
                 </User>
-                <FirstSection>
+                <Explore>
                     <Messenger>
                         <MessengerIcon />
                         Messenger
@@ -22,8 +22,6 @@ class SideBar extends React.Component {
                         <MarketplaceIcon />
                         Marketplace
                     </Marketplace>
-                </FirstSection>
-                <Explore>
                     <Title>Explore</Title>
                     <Events>
                         <EventIcon />
@@ -84,12 +82,13 @@ export default SideBar
 
 const Box = styled.div`
     display:none;
+    justify-content: flex-start;
     flex-direction: column;
-    width: 20rem;
+    width:100%;
     margin-top: 5rem;
-    /* position: fixed;
-    left: 0; */
     background-color: rgb(233, 235, 238);
+    left: 0; 
+    padding-right: 1.5rem;
 `
 const User = styled.div`
     display: flex;
@@ -117,10 +116,10 @@ const UserName = styled.div`
 `
 const FirstSection = styled.div`
     display: flex;
-    height:9rem;
+    height:100%;
     flex-direction: column;
     flex: 1;
-    justify-content: space-between;
+    justify-content: flex-start;
     font-size: 1.1rem;
     font-weight: 500;
     padding: 1rem;
