@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import Timeline from '../components/content/Timeline';
 import Feed from '../components/content/Feed';
+import { withRouter } from "react-router";
 class Links extends Component {
     state = {
         selected: 'feed',
@@ -35,7 +36,8 @@ class Links extends Component {
         this.setState({
             selected: tab
         })
-        return window.location.href = `http://localhost:3000/#/${tab}`
+        this.props.history.push(tab)
+        // return window.location.href = `http://localhost:3000/#/${tab}`
         // window.location.href = feed;
     }
     getPosY(tab) {
@@ -47,6 +49,8 @@ class Links extends Component {
     //     <Link to="/"><NavIcon posY={() => this.getPosY('feed')} /></Link>
     // </Item>
     render() {
+        console.log('TopBarDesktop')
+        console.log('history', this.props.history)
         return (
             <Nav>
                 <Box>
@@ -84,7 +88,7 @@ class Links extends Component {
     }
 
 }
-export default Links
+export default withRouter(Links)
 
 const Nav = styled.div`
     display: none;

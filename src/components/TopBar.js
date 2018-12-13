@@ -49,7 +49,7 @@ class Links extends Component {
             <Nav>
                 <Box>
                     <Item key="feed" onClick={() => this.selectTab('feed')}>
-                        <Link to="/"><NavIcon posY={() => this.getPosY('feed')} /></Link>
+                        <Link to="/feed"><NavIcon posY={() => this.getPosY('feed')} /></Link>
                     </Item>
                     <Item key="friends" onClick={() => this.selectTab('friends')}>
                         <Link to="/friends"><NavIcon posY={() => this.getPosY('friends')} /></Link>

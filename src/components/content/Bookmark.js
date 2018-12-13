@@ -21,7 +21,8 @@ class Bookmark extends Component {
         this.setState({
             select: page
         })
-        window.location.href = `http://localhost:3000/#/timeline`;
+        this.props.history.push('/timeline')
+        // window.location.href = `http://localhost:3000/#/timeline`;
     }
 
     render() {

@@ -26,39 +26,44 @@ const ActionBar = ({ children }) => {
     )
 }
 export default ActionBar;
-
-
 const PostIcon = styled.div`
-    background:  #f0f0f0;
-    width: 3rem;
-    height: 3rem;
+    background: url('post.png') no-repeat;
+    background-size: 4rem 4rem;
+    height: 4rem;
+    width: 4rem;
+    margin-right: .5rem;
 `
 const UpdateIcon = styled.div`
-    background:  #f0f0f0;
-    width: 2.5rem;
-    height: 2.5rem;
+   background: url('post.png') no-repeat;
+    background-size: 3rem 3rem;
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid;
+    margin-right: .5rem;
 `
 const ActivityIcon = styled.div`
-    background: #f0f0f0;
-    width: 2.5rem;
-    height:2.5rem;
+    background: url('post.png') no-repeat;
+    background-size: 4rem 4rem;
+    height: 4rem;
+    width: 4rem;
+    margin-right: .5rem;
 `
 const MoreIcon = styled.div`
-    background:  #f0f0f0;
-    width: 2.5rem;
-    height: 2.5rem;
+   background: url('post.png') no-repeat;
+    background-size: 4rem 4rem;
+    height: 4rem;
+    width: 4rem;
+    margin-right: .5rem;
 `
 
 const Nav = styled.div`
-    /* display: flex; */
-    /* border: 2px solid red; */
-    justify-content: space-between;
+    align-items: center;
     border-top: 1px solid #f5f5f5;
     border-bottom: 1px solid #f5f5f5;
     background-color: #fff;  
     width: 100%;
-    height: 6rem;
-    /* padding: 1.5rem; */
+    height: 5rem;
+    padding: 1rem;
 
 `
 const Item = styled.div`
@@ -76,13 +81,6 @@ const Post = styled.div`
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    /* background-image: url('./icons.png');
-    background-repeat: no-repeat;
-    background-size: 31px 1309px;
-    background-position: 0 ${p => p.posY}px;
-    height: 20px;
-    width: 20px;
-    cursor: pointer; */
 `
 const UpdateInfo = styled.div`
     display: flex;

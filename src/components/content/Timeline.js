@@ -69,7 +69,7 @@ class Timeline extends Component {
             <App>
                 <Header>
                     <Item key="backIcon" onClick={() => this.selectTab('backIcon')}>
-                        <Link to="/"><Back posY={() => this.getPosY('backIcon')} /></Link>
+                        <Link to="/feed"><Back posY={() => this.getPosY('backIcon')} /></Link>
                         <Name>{`Shani Arnon `}</Name>
                     </Item>
                 </Header>

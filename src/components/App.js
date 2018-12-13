@@ -20,23 +20,25 @@ import TopBarDesktop from './TopBarDesktop'
 
 class App extends Component {
   render() {
+    console.log('App')
+    console.log('history', this.props.history)
+
     return (
-      <HashRouter hashType="slash">
-        <div>
-          <TopBarDesktop />
-          <TopBar />
-          <Switch>
-            <Route exact={true} path="/feed" component={Feed} />
-            <Route path="/friends" component={Friends} />
-            <Route path="/messenger" component={Messenger} />
-            <Route path="/notifications" component={Notifications} />
-            <Route path="/search" component={Search} />
-            <Route path="/bookmark" component={Bookmark} />
-            <Route path="/timeline" component={Timeline} />
-          </Switch>
-          <GlobalStyles />
-        </div>
-      </HashRouter>
+      <div>
+        <TopBarDesktop />
+        <TopBar />
+        <Switch>
+          <Route exact={true} path="/feed" component={Feed} />
+          <Route path="/friends" component={Friends} />
+          <Route path="/messenger" component={Messenger} />
+          <Route path="/notifications" component={Notifications} />
+          <Route path="/search" component={Search} />
+          <Route path="/bookmark" component={Bookmark} />
+          <Route path="/timeline" component={Timeline} />
+        </Switch>
+        <GlobalStyles />
+      </div>
+
     )
   }
 }

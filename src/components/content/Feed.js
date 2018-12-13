@@ -15,6 +15,9 @@ export default class Feed extends Component {
     }
 
     componentDidMount() {
+        // console.log('Feed')
+        // console.log('history', this.props.history)
+
         console.log('componentDidMount');
         const POSTS_URL = `/api/posts/${this.state.user_id}`
         console.log('POSTS_URL', POSTS_URL)
