@@ -18,10 +18,8 @@ export default class FriendsListSide extends Component {
 }
 const Box = styled.div`
     display:none;
-    /* display: flex; */
     flex-direction: column;
     width:100%;
-    align-items: center;
     background: #e9ebee;
     border-left: 1px solid rgb(204, 208, 213); 
     height: 100%;
@@ -43,9 +41,13 @@ const Bottom = styled.div`
     margin-bottom: 2rem;
 `
 const Friends = styled.div`
-    color: rgb(87, 107, 149);
+    color: #4a4a4a;
+    font-size: 1.1rem;
+    height: 1.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
     cursor: pointer;
-    font-weight: 500;
-    padding: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 `
 const FindFriends = styled.div``

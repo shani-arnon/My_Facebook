@@ -93,9 +93,10 @@ const Box = styled.div`
 `
 const User = styled.div`
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    margin-left: 3rem;
+    margin-left: 2.5rem;
+    margin-bottom: 1rem;
+
 `
 const Img = styled.div`
     background: #d8dce6 url('dog2.jpg') no-repeat center;
@@ -116,7 +117,7 @@ const UserName = styled.div`
 `
 const FirstSection = styled.div`
     display: flex;
-    height:10rem;
+    height:9rem;
     flex-direction: column;
     flex: 1;
     justify-content: space-between;
@@ -130,9 +131,9 @@ const Messenger = styled.div`
 `
 const MessengerIcon = styled.div`
     background: url('sidebar_messenger.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 
@@ -141,20 +142,19 @@ const Watch = styled.div`
 `
 const WatchIcon = styled.div`
     background: url('sidebar_watch.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
-
 const Marketplace = styled.div`
     display: flex;
 `
 const MarketplaceIcon = styled.div`
     background: url('sidebar_marketplace.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const Explore = styled.div`
@@ -170,18 +170,16 @@ const Explore = styled.div`
 `
 const Title = styled.div`
     font-weight: 300;
-
 `
-
 const Events = styled.div`
     display: flex;
     align-items: center;
 `
 const EventIcon = styled.div`
     background: url('sidebar_event.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const Pages = styled.div`
@@ -190,9 +188,9 @@ const Pages = styled.div`
 `
 const PageIcon = styled.div`
     background: url('sidebar_pages.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const Groups = styled.div`
@@ -201,9 +199,9 @@ const Groups = styled.div`
 `
 const GroupIcon = styled.div`
     background: url('sidebar_group.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const LiveDemo = styled.div`
@@ -212,9 +210,9 @@ const LiveDemo = styled.div`
 `
 const LiveDemoIcon = styled.div`
     background: url('sidebar_live.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const Memories = styled.div`
@@ -223,9 +221,9 @@ const Memories = styled.div`
 `
 const MemoriesIcon = styled.div`
     background: url('sidebar_clock.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const Jobs = styled.div`
@@ -234,9 +232,9 @@ const Jobs = styled.div`
 `
 const JobsIcon = styled.div`
     background: url('sidebar_suitcase.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const Saved = styled.div`
@@ -245,9 +243,9 @@ const Saved = styled.div`
 `
 const SavedIcon = styled.div`
     background: url('sidebar_saved.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const Weather = styled.div`
@@ -256,9 +254,9 @@ const Weather = styled.div`
 `
 const WeatherIcon = styled.div`
     background: url('sidebar_weather.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const Fundraisers = styled.div`
@@ -267,9 +265,9 @@ const Fundraisers = styled.div`
 `
 const FundraiserIcon = styled.div`
     background: url('sidebar_profit.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const Games = styled.div`
@@ -278,9 +276,9 @@ const Games = styled.div`
 `
 const GamesIcon = styled.div`
     background: url('sidebar_games.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const Offers = styled.div`
@@ -289,9 +287,9 @@ const Offers = styled.div`
 `
 const OffersIcon = styled.div`
     background: url('sidebar_offers.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const Recommendations = styled.div`
@@ -300,9 +298,9 @@ const Recommendations = styled.div`
 `
 const RecommendationsIcon = styled.div`
     background: url('sidebar_recommendation.png') no-repeat;
-    background-size: 2rem 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-right: .5rem;
 `
 const SeeMore = styled.div`
