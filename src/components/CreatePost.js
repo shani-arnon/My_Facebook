@@ -36,8 +36,8 @@ const Box = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
-    border-right: 1px solid rgb(204, 208, 213);
-    border-left: 1px solid rgb(204, 208, 213);
+    /* border-right: 1px solid rgb(204, 208, 213); */
+    /* border-left: 1px solid rgb(204, 208, 213); */
     border-bottom: 1px solid rgb(204, 208, 213);
     border-top: 1px solid rgb(204, 208, 213);
     font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
@@ -110,7 +110,7 @@ const CheckInIcon = styled.div`
     background-size: 1.5rem 1.7rem;
     height: 1.7rem;
     width: 1.5rem;
-    padding-right: 1.5rem;
+    padding-right: 1.7rem;
 `
 const Activity = styled.div`
     color: #576b95;
@@ -129,7 +129,7 @@ const ActivityIcon = styled.div`
     background-size: 1.5rem 1.7rem;
     height: 1.7rem;
     width: 1.5rem;
-    padding-right: 1.5rem;
+    padding-right: 2rem;
 `
 const Photo = styled.div`
     color: #576b95;
@@ -148,7 +148,7 @@ const PhotoIcon = styled.div`
     background-size: 1.5rem 1.7rem;
     height: 1.7rem;
     width: 1.5rem;
-    padding-right: 1.5rem;
+    padding-right: 2rem;
     /* border: 1px solid; */
 `
 

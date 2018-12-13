@@ -4,25 +4,41 @@ import styled from "styled-components"
 import CreatePost from "../CreatePost"
 import PostsList from '../PostsList'
 import SideBar from '../SideBar'
+import FriendsListSide from '../FriendsListSide'
 
 
 export default class Feed extends Component {
     state = {
-        user_id: 2,
-        posts: []
+        user_id: 3,
+        posts: [],
+        friends: []
     }
+
     componentDidMount() {
-        console.log('componentDidMount')
-        const URL = `/api/posts/${this.state.user_id}`
-        console.log('URL', URL)
-        fetch(URL)
-            .then(res => {
-                return res.json()
-            })
-            .then(json => {
-                console.log('json', json)
+        console.log('componentDidMount');
+        const POSTS_URL = `/api/posts/${this.state.user_id}`
+        console.log('POSTS_URL', POSTS_URL)
+        const FRIENDS_URL = `/api/friends/${this.state.user_id}`
+        console.log('FRIENDS_URL', FRIENDS_URL)
+
+        Promise.all([
+            fetch(POSTS_URL)
+                .then(res => {
+                    return res.json()
+                })
+            ,
+            fetch(FRIENDS_URL)
+                .then(res => {
+                    return res.json()
+                })
+        ])
+            .then(([posts, friends]) => {
+                console.log('friend', friends.length)
+                console.log('posts', posts.length)
+
                 this.setState({
-                    posts: json
+                    posts,
+                    friends
                 })
             })
             .catch(ex => {
@@ -39,6 +55,9 @@ export default class Feed extends Component {
                     <CreatePost />
                     <PostsList posts={this.state.posts} />
                 </Main>
+                <FriendsWrap>
+                    <FriendsList friends={this.state.friends} />
+                </FriendsWrap>
             </App>
         );
     }
@@ -52,10 +71,19 @@ const SideBarWrap = styled.div`
         } 
     }
 `
+const FriendsList = styled(FriendsListSide)``;
+const FriendsWrap = styled.div`
+    ${FriendsList}{
+        @media (min-width: 700px) {
+            display: flex;
+        } 
+    }
+`
 const App = styled.div`
     display: flex;
     flex: 1;
-    background: #e8e8e8;
+    background-color: rgb(233, 235, 238);
+
 `
 const Main = styled.div`
     border: 1px solid #f6f7f8;

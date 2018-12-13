@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
-
+import Timeline from '../components/content/Timeline';
 class Links extends Component {
     state = {
         selected: 'feed',
+        timeline_page: {
+            new_path: '/timeline',
+            component: Timeline
+        },
         friends: {
             pickedY: -379,
             normalY: -358
@@ -26,6 +30,7 @@ class Links extends Component {
         this.setState({
             selected: tab
         })
+        window.location.href = `http://localhost:3000/#/timeline`;
     }
     getPosY(tab) {
         const selected = this.state.selected;
@@ -43,7 +48,7 @@ class Links extends Component {
                         <Icon />
                     </Search>
                     <TabBox>
-                        <User>
+                        <User key="timeline_page" onClick={() => this.selectTab('timeline_page')}><Link to='/timeline' ></Link>
                             <Img />
                             Shani
                     </User>

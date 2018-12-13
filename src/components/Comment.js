@@ -5,9 +5,15 @@ const Comment = ({ user_id, timestamp, content, reactions, avatar }) => {
 
     return (
         <Box>
+            <Img src={avatar} />
             <CommentBox>
-                <Img src={avatar} />
                 <P>{content}</P>
+                <MetaBox>
+                    <Like>Like</Like>
+                    <Reply>Reply</Reply>
+                    <Time>{timestamp} ago</Time>
+                    {/* <Reactions>{reactions.length}</Reactions> */}
+                </MetaBox>
             </CommentBox>
         </Box>
     )
@@ -20,14 +26,28 @@ const Box = styled.div`
     background-color: white;
     width: 100%;
     align-items: center;
-    /* border: 2px solid green; */
 `
 const CommentBox = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     height: 100%;
     width: 100%;
-    /* border: 3px solid blueviolet; */
+    color: #606770;
+    font-size: 1.2rem;
+    /* border: 1px solid; */
+`
+const Like = styled.div`
+    text-decoration: underline;
+    color:#365899;
+    font-size: 1.2rem;
+    margin-right: .5rem;
+`
+const Reply = styled.div`
+    text-decoration: underline;
+    color:#365899;
+    font-size: 1.2rem;
+    margin-right: .5rem;
 `
 const P = styled.div`
     align-items: flex-start;
@@ -43,16 +63,19 @@ const P = styled.div`
     font-weight: 500;
     border-radius: 1.8rem;    
 `
+const MetaBox = styled.div`
+    display: flex;
+    flex: 1;
+
+`
+const Time = styled.div``
+const Reactions = styled.div``
 const Img = styled.img`
     display: flex;
-    /* background: #d8dce6 url('me.jpg') no-repeat center; */
-    /* background: #d8dce6 url('dog2.jpg') no-repeat center; */
     object-fit: contain;
-    /* background-size: 100% 100%;
-    -webkit-background-size: 100% 100%; */
     height: 4rem;
     width: 4rem;
     border-radius: 50%; 
-    border: 1px solid #ccd0d5;
+    border: .5px solid #ccd0d5;
     margin-right: 1rem;
 `

@@ -39,6 +39,15 @@ const Post = ({ user_id, last_name, first_name, avatar, timestamp, content, comm
             <CommentList>
                 {comments.map((comment, i) => <Comment key={i} {...comment} />)}
             </CommentList>
+
+            <PostBox>
+                <Image></Image>
+                <Input
+                    type="text"
+                    placeholder="Write a reply..." >
+                </Input>
+            </PostBox>
+
         </Box>
     )
 }
@@ -71,6 +80,47 @@ const Img = styled.img`
     border: 1px solid #ccd0d5;
 `
 
+const PostBox = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    /* border: 2px solid red; */
+`
+//bottomm add a comment
+const Image = styled.div`
+    /* background: #d8dce6 url('me.jpg') no-repeat center; */
+    background: #d8dce6 url('dog2.jpg') no-repeat center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%; 
+    /* border: 1px solid #ccd0d5; */
+`
+const Input = styled.input`
+    border: 1px solid #ccd0d5;
+    background: whitesmoke;
+    border-radius: 20px;
+    line-height: inherit;
+    padding: 8px 12px;
+    white-space: pre-line;
+    font-size: 1.2rem;
+    width:100%;
+    flex: 1;
+    padding: .8rem;
+    margin: 1rem;
+    border: 1px solid #ccd0d5;
+    line-height: inherit;
+    color: #8d949e;
+    cursor: pointer;
+    font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
+`
+
 const UserName = styled.div`
     font-weight: bold;
     font-size: 1.4rem;
@@ -100,8 +150,6 @@ const Actions = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    align-items: center;
-    padding: .5rem;
     border-bottom: 1px solid gainsboro;
     border-top: 1px solid gainsboro;
 `
@@ -118,10 +166,11 @@ const Like = styled.div`
 `
 const LikeIcon = styled.div`
     background: url('like_white.png') no-repeat;
-    background-size: 2.5rem 2.5rem;
-    height: 2.5rem;
-    width: 2.5rem;
-    /* padding-right: 1.5rem; */
+    background-size: 3.5rem 3.5rem;
+    height: 3rem;
+    width: 3rem;
+    margin-bottom: .5rem;
+    margin-right: .3rem;
 `
 const CommentAction = styled.div`
     cursor: pointer;
@@ -136,9 +185,11 @@ const CommentAction = styled.div`
 `
 const CommentIcon = styled.div`
     background: url('comment_white.png') no-repeat;
-    background-size: 2.5rem 2.5rem;
-    height: 2.5rem;
-    width: 2.5rem;
+    background-size: 3.5rem 3.5rem;
+    height: 3rem;
+    width: 3rem;
+    margin-bottom: .5rem;
+    margin-right: .3rem;
 `
 
 const Share = styled.div`
@@ -154,9 +205,11 @@ const Share = styled.div`
 `
 const ShareIcon = styled.div`
     background: url('share_white.png') no-repeat;
-    background-size: 3rem 3rem;
+    background-size: 3.5rem 3.5rem;
     height: 3rem;
     width: 3rem;
+    margin-bottom: .5rem;
+    margin-right: .3rem;
 `
 
 const Reactions = styled.div`
