@@ -7,6 +7,7 @@ import Images from '../Photos';
 import FriendsList from "../FreindsList";
 import PostsList from "../PostsList";
 import ActionBar from '../ActionBar';
+import TimelineDesktop from './TimelineDsektop'
 
 class Timeline extends Component {
 
@@ -73,10 +74,17 @@ class Timeline extends Component {
                         <Name>{`Shani Arnon `}</Name>
                     </Item>
                 </Header>
+
+                {/* Breaking point */}
+                <TimelineWrap>
+                    <DesktopTimeline />
+                </TimelineWrap>
+
+
                 <ProfileSection>
                     <PaneText>
                         <HeroImg>
-                            <ProfileImg></ProfileImg>
+                            <ProfileImg />
                         </HeroImg>
                         <NameImg>Shani Arnon</NameImg>
                         <P>This is my Facebook profile page!</P>
@@ -118,25 +126,43 @@ class Timeline extends Component {
 }
 export default Timeline;
 
+const App = styled.div`
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background: rgb(233, 235, 238);
+`
+
+const DesktopTimeline = styled(TimelineDesktop)``;
+const TimelineWrap = styled.div`
+
+    ${DesktopTimeline}{
+        @media (min-width: 700px) {
+            display: flex;
+        } 
+      
+    }
+`
 const WorkIcon = styled.div`
-    background:  #f0f0f0;
-    width: 2rem;
+    background: url('work.png') no-repeat;
+    background-size: 2rem 2rem;
     height: 2rem;
-    margin-right: 1rem;
+    width: 2rem;
+    margin-right: .5rem;
 `
 const StudyIcon = styled.div`
-    background:  #f0f0f0;
-    width: 2rem;
+    background: url('study.png') no-repeat;
+    background-size: 2rem 2rem;
     height: 2rem;
-    margin-right: 1rem;
-
+    width: 2rem;
+    margin-right: .5rem;
 `
 const FromIcon = styled.div`
-    background:  #f0f0f0;
-    width: 2rem;
+    background: url('home.png') no-repeat;
+    background-size: 2rem 2rem;
     height: 2rem;
-    margin-right: 1rem;
-
+    width: 2rem;
+    margin-right: .5rem;
 `
 const Description = styled.div`
     display: flex;
@@ -146,7 +172,6 @@ const Description = styled.div`
     font-size: 1.4rem;
     color: #576b95;
     padding: 1.5rem;
-    /* border: 3px solid blueviolet; */
 `
 const MetaAction = styled.div`
     margin-left: 3rem;
@@ -155,7 +180,8 @@ const MetaAction = styled.div`
 const MetaData = styled.div`
     display: flex;
     color: black;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    font-weight: 500;
     line-height: 1.8rem;
     font-family: Arial, Helvetica, sans-serif;
 `
@@ -170,12 +196,6 @@ const MetaBtn = styled.div`
     padding: 1.8rem;
     font-size: 1.4rem;
     color: black;
-`
-const App = styled.div`
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    background: rgb(233, 235, 238);
 `
 const Box = styled.div`
     display: flex;
@@ -236,7 +256,6 @@ const P = styled.p`
     font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
     padding: 1rem;
 `
-
 const HeroImg = styled.div`
     display:flex;
     flex-direction: column;
@@ -252,16 +271,15 @@ const ProfileSection = styled.div`
     height: 70rem;
     margin-top: 4.5rem;
     display: flex;
-    justify-content: space-evenly
+    justify-content: space-evenly;
     /* border: 3px solid red; */
 `
 const ProfileImg = styled.div`
-    display: inline-block;
+    display: block;
     position: absolute;
     width: 13rem;
     height: 13rem;
     background: #d8dce6 url('me.jpg') no-repeat center;
-    /* background: #d8dce6 url('dog2.jpg') no-repeat center; */
     background-size: 100% 100%;
     border-radius: 0.5rem;
     border: .4px solid rgb(216, 220, 230);

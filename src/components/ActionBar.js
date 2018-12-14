@@ -31,74 +31,60 @@ const PostIcon = styled.div`
     background-size: 4rem 4rem;
     height: 4rem;
     width: 4rem;
-    margin-right: .5rem;
 `
 const UpdateIcon = styled.div`
-   background: url('post.png') no-repeat;
-    background-size: 3rem 3rem;
-    height: 2rem;
-    width: 2rem;
-    border: 1px solid;
-    margin-right: .5rem;
+   background: url('info.png') no-repeat;
+    background-size: 4rem 4rem;
+    height: 4rem;
+    width: 4rem;
 `
 const ActivityIcon = styled.div`
-    background: url('post.png') no-repeat;
+    background: url('log.png') no-repeat;
     background-size: 4rem 4rem;
     height: 4rem;
     width: 4rem;
-    margin-right: .5rem;
 `
 const MoreIcon = styled.div`
-   background: url('post.png') no-repeat;
+   background: url('more.png') no-repeat;
     background-size: 4rem 4rem;
     height: 4rem;
     width: 4rem;
-    margin-right: .5rem;
 `
-
 const Nav = styled.div`
+    display: flex;
+    flex: 1;
     align-items: center;
     border-top: 1px solid #f5f5f5;
     border-bottom: 1px solid #f5f5f5;
-    background-color: #fff;  
-    width: 100%;
-    height: 5rem;
-    padding: 1rem;
-
 `
 const Item = styled.div`
     display: flex;
+    flex: 1;
     justify-content: space-evenly;
     text-shadow: rgba(255, 255, 255, 0.75) 0px 1px;
     font-size: 1.2rem;
     color: rgb(75, 79, 86);
-    height: 100%;
-    /* border: 2px solid red; */
 `
 const Post = styled.div`
     display: flex;
-    flex: 1;
-    flex-direction: column-reverse;
+    flex-direction: column-reverse; 
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 `
 const UpdateInfo = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column-reverse;
     align-items: center;
-    flex: 1;
 `
 const ActivityLog = styled.div`
     display: flex;
-    flex: 1;
     justify-content: center;
     flex-direction: column-reverse;
     align-items: center;
 `
 const More = styled.div`
     display: flex;
-    flex: 1;
     justify-content: center;
     flex-direction: column-reverse;
     align-items: center;

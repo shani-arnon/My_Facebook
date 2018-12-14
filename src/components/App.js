@@ -20,9 +20,8 @@ import TopBarDesktop from './TopBarDesktop'
 
 class App extends Component {
   render() {
-    console.log('App')
-    console.log('history', this.props.history)
-
+    // console.log('App')
+    // console.log('history', this.props.history)
     return (
       <div>
         <TopBarDesktop />
