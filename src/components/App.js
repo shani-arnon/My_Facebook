@@ -18,6 +18,10 @@ import Bookmark from './content/Bookmark';
 import TopBar from './TopBar'
 import TopBarDesktop from './TopBarDesktop'
 
+// import TimelineMobile from './content/TimelineMobile'
+// import TimelineDesktop from './content/TimelineDesktop'
+
+
 class App extends Component {
   render() {
     // console.log('App')
@@ -26,6 +30,8 @@ class App extends Component {
       <div>
         <TopBarDesktop />
         <TopBar />
+        {/* <TimelineMobile />
+        <TimelineDesktop /> */}
         <Switch>
           <Route exact={true} path="/feed" component={Feed} />
           <Route path="/friends" component={Friends} />

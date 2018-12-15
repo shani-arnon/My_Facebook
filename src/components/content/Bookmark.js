@@ -7,7 +7,7 @@ import {
 
 import TopBar from '../TopBar';
 import Links from '../Links';
-import Timeline from './Timeline';
+import Timeline from './TimelineMobile';
 
 class Bookmark extends Component {
     state = {

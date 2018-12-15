@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
-import Timeline from '../components/content/Timeline';
+import Timeline from './content/TimelineMobile';
 import Feed from '../components/content/Feed';
 import { withRouter } from "react-router";
 class Links extends Component {
@@ -98,13 +98,14 @@ const Nav = styled.div`
     width: 100%;
     background-color:#4267b2;  
     z-index: 900;
-    @media (min-width: 700px) {
+    @media (min-width: 750px) {
         display: block;
     }
 `
 const Box = styled.ul`
     display: flex;
-    height:4.5rem;
+    align-items: center;
+    height:5rem;
     border-bottom: 1px solid #29487d;
 `
 const Item = styled.li`
@@ -119,14 +120,12 @@ const TabBox = styled.div`
     display: flex;
     align-items: center;
     width: 30%;
-    /* border: 1px solid; */
 `
 const FBIcon = styled.div`
     background-image: url('/facebook_white_64.png');
     background-size: 100% 100%;
     width: 2.7rem;
     height: 2.7rem;
-    margin-top: .7rem;
     margin-right: .7rem;
     margin-left: .7rem;
     padding: .5rem;
@@ -139,8 +138,6 @@ const Search = styled.div`
     border: 1px solid gainsboro;
     height: 2.7rem;
     width: 5rem;
-    margin-top: .7rem;
-    margin-bottom: .7rem;
 `
 const Icon = styled.div`
     background-image: url('/search_64.png');
@@ -163,7 +160,6 @@ const Home = styled.div`
     border-right: 1px solid #29487d;
     border-left: 1px solid #29487d;
     height: 2.3rem;
-    /* border: 1px solid; */
 `
 const User = styled.div`
     display: flex;
@@ -176,7 +172,6 @@ const User = styled.div`
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
-    /* border: 1px solid; */
 `
 const Img = styled.div`
     background: #d8dce6 url('dog2.jpg') no-repeat center;
@@ -185,7 +180,7 @@ const Img = styled.div`
     height: 2.1rem;
     width: 2.1rem;
     border-radius: 50%; 
-    margin-right: .5rem;
+    margin-right: .7rem;
 `
 const Create = styled.div`
     color: white;
@@ -200,7 +195,6 @@ const Create = styled.div`
     flex: 1;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid; */
 `
 const NavIcon = styled.div`
     background-image: url('./icons.png');
@@ -229,7 +223,6 @@ const Input = styled.input`
     border: 2px solid white;
     padding:.5rem;
     height: 2.7rem;
-    margin-top: .7rem;
     width: 40%;
 `
 
