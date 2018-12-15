@@ -104,8 +104,31 @@ class Timeline extends Component {
 
                 <Box>
                     <Side>
-                        <FriendsList friends={this.state.friends} />
+                        <Header>
+                            <Title>
+                                <IntroIcon />
+                                Intro
+                            </Title>
+                            <Tagline>This is my Facebook profile page!</Tagline>
+                        </Header>
+                        <Intro>
+                            <MetaData>
+                                <WorkIcon />
+                                Works at Facebook
+                            </MetaData>
+                            <MetaData>
+                                <StudyIcon />
+                                Studies at The Open University
+                            </MetaData>
+                            <MetaData>
+                                <FromIcon />
+                                From Tel-Aviv, Israel
+                            </MetaData>
+                            <MetaAction>Edit Details</MetaAction>
+                            <MetaBtn> + Add to Featured</MetaBtn>
+                        </Intro>
                         <Images />
+                        <FriendsList friends={this.state.friends} />
                     </Side>
                     <Main>
                         <CreatePost />
@@ -127,29 +150,118 @@ const App = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     background: rgb(233, 235, 238);
-    border: 7px solid green;
     @media (max-width: 700px) {
-            display: none;
-        }
+        display: none;
+    }
 `
 const Box = styled.div`
     display: grid;
     grid-template-columns:40% 60%;
-    /* border: 6px solid yellow; */
-    /* grid-gap: 1rem;  */
-    /* border-bottom: 1px solid lightgray; */
+    border-bottom: 1px solid lightgray;
+    margin-right: 2rem;
 `
 const Main = styled.div`
     display: flex; 
     flex-direction: column;
-    margin-right: 5rem;
+    /* margin-right: 2rem; */
     margin-left: 1rem;
 `
 const Side = styled.div`
    display: flex; 
     flex-direction: column;
     margin-top: 1.5rem;
+`
+const Intro = styled.div`
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 35rem;
+    font-size: 1.4rem;
+    color: #576b95;
+    padding: 1rem;
+    margin-bottom: 1rem;
+`
+const Title = styled.div`
+    display: flex;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+`
+const Header = styled.div`
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 1rem;
+    /* padding-bottom: 1rem; */
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-bottom: 1px solid lightgray;
+`
+const IntroIcon = styled.div`
+    background: url('intro.png') no-repeat;
+    background-size:2rem 2rem;
+    height:2rem;
+    width:2rem;
+    margin-right: .5rem;
+`
+const Tagline = styled.p`
+    color: #1d2129;
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    margin-left: 2.5rem;
+    /* border: 1px solid; */
+
+`
+const MetaAction = styled.div`
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+`
+const MetaData = styled.div`
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+`
+const MetaBtn = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #576b95;
+    border-radius: .5rem;
+    width: 100%;
+    height: 1.2rem;
+    padding: 1.2rem;
+    font-size: 1rem;
+`
+const WorkIcon = styled.div`
+    background: url('work.png') no-repeat;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: .5rem;
+`
+const StudyIcon = styled.div`
+    background: url('study.png') no-repeat;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: .5rem;
+`
+const FromIcon = styled.div`
+    background: url('home.png') no-repeat;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: .5rem;
 `
 const GridIcon = styled.div`
     background: url('grid.png') no-repeat;
@@ -256,6 +368,7 @@ const NameImg = styled.div`
     letter-spacing: -0.25px;
     line-height: 1;
     padding: 1rem;
+    margin-right: 5rem;
 `
 
 const AboutTab = styled.div`
