@@ -4,9 +4,11 @@ import styled from "styled-components";
 import CreatePost from "../CreatePost";
 
 import PhotosTimeline from '../PhotosTimelineDesktop'
-import Images from '../Photos';
-import FriendsList from "../FreindsList";
-import PostsList from "../PostsList";
+
+// import FriendsList from "../FreindsList"
+import FriendTimelineSide from '../FriendTimelineDesktop'
+
+import PostsList from "../PostsList"
 
 class Timeline extends Component {
 
@@ -129,7 +131,7 @@ class Timeline extends Component {
                             <MetaBtn> + Add to Featured</MetaBtn>
                         </Intro>
                         <PhotosTimeline />
-                        <FriendsList friends={this.state.friends} />
+                        <FriendTimelineSide friends={this.state.friends} />
                     </Side>
                     <Main>
                         <CreatePost />
@@ -151,7 +153,6 @@ const App = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     background: rgb(233, 235, 238);
     @media (max-width: 700px) {
         display: none;

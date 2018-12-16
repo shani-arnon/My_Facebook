@@ -22,7 +22,7 @@ router.get('/:user_id', md(async (req, res) => {
     const data = await read_file(path.resolve(__dirname, '../friends_data.json'), 'utf-8')
     const friends = JSON.parse(data)
     // res.json(friends)
-    res.json(friends.slice(0, 6))
+    res.json(friends.slice(0, 9))
 }))
 
 module.exports = router

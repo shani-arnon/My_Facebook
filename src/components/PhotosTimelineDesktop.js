@@ -65,7 +65,6 @@ const Gallery = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 2rem;
-    /* border: 1px solid red; */
 `
 const Item = styled.div`
     background: #d8dce6 url('dog3.jpg') no-repeat center;
@@ -74,13 +73,13 @@ const Item = styled.div`
     background-size: cover;
     border: 1px solid white;
     height: 10rem;
-    width:11.2rem;
+    width:30%;
     margin: .4rem;
 `
 const AddPhoto = styled.div`
     font-size: 1.3rem;
     color: #3578e5;
-    margin-left: 20rem;
+    margin-left: 17rem;
     &:hover{
         text-decoration: underline;
     }
