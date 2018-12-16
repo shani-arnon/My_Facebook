@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import CreatePost from "../CreatePost";
 
+import PhotosTimeline from '../PhotosTimelineDesktop'
 import Images from '../Photos';
 import FriendsList from "../FreindsList";
 import PostsList from "../PostsList";
@@ -104,14 +105,14 @@ class Timeline extends Component {
 
                 <Box>
                     <Side>
-                        <Header>
-                            <Title>
-                                <IntroIcon />
-                                Intro
-                            </Title>
-                            <Tagline>This is my Facebook profile page!</Tagline>
-                        </Header>
                         <Intro>
+                            <Header>
+                                <Title>
+                                    <IntroIcon />
+                                    Intro
+                                </Title>
+                                <Tagline>This is my Facebook profile page!</Tagline>
+                            </Header>
                             <MetaData>
                                 <WorkIcon />
                                 Works at Facebook
@@ -127,7 +128,7 @@ class Timeline extends Component {
                             <MetaAction>Edit Details</MetaAction>
                             <MetaBtn> + Add to Featured</MetaBtn>
                         </Intro>
-                        <Images />
+                        <PhotosTimeline />
                         <FriendsList friends={this.state.friends} />
                     </Side>
                     <Main>
@@ -165,7 +166,6 @@ const Box = styled.div`
 const Main = styled.div`
     display: flex; 
     flex-direction: column;
-    /* margin-right: 2rem; */
     margin-left: 1rem;
 `
 const Side = styled.div`
@@ -178,24 +178,22 @@ const Intro = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 35rem;
+    height: 30rem;
     font-size: 1.4rem;
-    color: #576b95;
+    color: #1c1e21;
+    border-radius: 0.3rem;
+    border: 1px solid lightgray;
     padding: 1rem;
     margin-bottom: 1rem;
 `
 const Title = styled.div`
     display: flex;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
 `
 const Header = styled.div`
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    padding: 1rem;
-    /* padding-bottom: 1rem; */
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
     border-bottom: 1px solid lightgray;
 `
@@ -207,17 +205,16 @@ const IntroIcon = styled.div`
     margin-right: .5rem;
 `
 const Tagline = styled.p`
-    color: #1d2129;
+    color: #1c1e21;
     background-color: #fff;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-    margin-left: 2.5rem;
-    /* border: 1px solid; */
-
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
 `
 const MetaAction = styled.div`
+    color: #365899;
     margin-left: 2rem;
     font-size: 1.2rem;
     font-weight: 400;
@@ -230,6 +227,7 @@ const MetaData = styled.div`
     font-weight: 500;
     line-height: 1.3rem;
     font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
 `
 const MetaBtn = styled.div`
     display: flex;
@@ -241,6 +239,7 @@ const MetaBtn = styled.div`
     height: 1.2rem;
     padding: 1.2rem;
     font-size: 1rem;
+    padding-top: 1rem;
 `
 const WorkIcon = styled.div`
     background: url('work.png') no-repeat;
