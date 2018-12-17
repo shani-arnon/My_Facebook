@@ -30,18 +30,16 @@ export default class PhotosTimelineDesktop extends Component {
 const Box = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     background: #fff;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
     height: 42rem;
-    border-bottom: 1px solid rgb(204, 208, 213); 
-    border-top: 1px solid rgb(204, 208, 213); 
+    border: 1px solid rgb(204, 208, 213); 
     margin-bottom: 1rem;
+    border-radius: .3rem;
 `
 const Head = styled.div`
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     color: rgb(87, 107, 149);
     cursor: pointer;
@@ -77,62 +75,11 @@ const Item = styled.div`
     margin: .4rem;
 `
 const AddPhoto = styled.div`
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #3578e5;
-    margin-left: 17rem;
+    margin-left: 18rem;
     &:hover{
         text-decoration: underline;
     }
 
 `
-
-
-// const GItem2 = styled.div`
-//     background: #d8dce6 url('IMG_0662.JPG') no-repeat center;
-//     background-size: 100% 100%;
-//     -webkit-background-size: 100% 100%;
-//     background-size: cover;
-//     border: .5px solid rgb(204, 208, 213);
-//     height: 15rem;
-//     width: 15rem;
-//     max-width: 100%;
-//     margin-right: .3rem;
-//     margin-left: .3rem;
-//     margin-bottom: .3rem;
-// `
-// const Item1 = styled.div`
-//     background: #d8dce6 url('dog4.jpg') no-repeat center;
-//     background-size: 100% 100%;
-//     -webkit-background-size: 100% 100%;
-//     background-size: cover;
-//     border: .5px solid rgb(204, 208, 213);
-//     height: 10rem;
-//     width: 15rem; 
-//     max-width: 100%;
-//     margin-bottom: .3rem;
-//     /* width: 100%;
-//     height: 100%; */
-// `
-// const Item2 = styled.div`
-//     background: #d8dce6 url('dog2.jpg') no-repeat center;
-//     background-size: 100% 100%;
-//     -webkit-background-size: 100% 100%;
-//     background-size: cover;
-//     border: .5px solid rgb(204, 208, 213);
-//     height: 10rem;
-//     width: 15rem; 
-//     max-width: 100%;
-//     margin-bottom: .3rem;
-//     /* width: 100%;
-//     height: 100%; */
-// `
-// const Item3 = styled.div`
-//     background: #d8dce6 url('dog.jpg') no-repeat center;
-//     background-size: 100% 100%;
-//     -webkit-background-size: 100% 100%;
-//     background-size: cover;
-//     border: .5px solid rgb(204, 208, 213);
-//     height: 10rem;
-//     width: 15rem; 
-//     max-width: 100%;
-// `

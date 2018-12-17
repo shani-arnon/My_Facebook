@@ -36,10 +36,8 @@ const Box = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
-    /* border-right: 1px solid rgb(204, 208, 213); */
-    /* border-left: 1px solid rgb(204, 208, 213); */
-    border-bottom: 1px solid rgb(204, 208, 213);
-    border-top: 1px solid rgb(204, 208, 213);
+    border: 1px solid rgb(204, 208, 213);
+    border-radius: .5rem;
     font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;

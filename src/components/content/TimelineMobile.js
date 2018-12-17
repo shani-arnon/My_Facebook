@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import CreatePost from "../CreatePost";
 
-import Images from '../Photos';
-import FriendsList from "../FreindsList";
+import Images from '../PhotosTimelineMobile';
+import FreindsList from "../FreindsListMobile";
 import PostsList from "../PostsList";
 import ActionBar from '../ActionBar';
 
@@ -109,7 +109,7 @@ class TimelineMobile extends Component {
                 <Box>
                     <CreatePost />
                     <Images />
-                    <FriendsList friends={this.state.friends} />
+                    <FreindsList friends={this.state.friends} />
                     <PostsList posts={this.state.posts} />
                 </Box>
             </App >

@@ -3,9 +3,8 @@ import styled from "styled-components"
 
 import CreatePost from "../CreatePost"
 import PostsList from '../PostsList'
-import SideBar from '../SideBar'
-import FriendsListSide from '../FriendsListSide'
-
+import SideBar from '../SideDivFeedDesktop'
+import FriendFeedDesktop from '../FriendFeedDesktop'
 
 export default class Feed extends Component {
     state = {
@@ -76,14 +75,13 @@ const SideBarWrap = styled.div`
         } 
     }
 `
-const FriendsList = styled(FriendsListSide)``;
+const FriendsList = styled(FriendFeedDesktop)``;
 const FriendsWrap = styled.div`
     right: 0;
     position: sticky;
     ${FriendsList}{
         @media (min-width: 700px) {
             display: flex;
-            
         } 
     }
 `
@@ -92,10 +90,10 @@ const App = styled.div`
     background-color: rgb(233, 235, 238);
 `
 const Main = styled.div`
-    border: 1px solid #f6f7f8;
     display: flex;
     flex-direction: column;
-    margin-top: 3rem;
+    margin-top: 5rem;
+    margin-right: 5rem;
     flex: 1;
     overflow: auto;
 `

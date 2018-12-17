@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from "styled-components"
 import Friend from './Friend'
 
-export default class FriendsList extends Component {
+export default class FriendsListMobile extends Component {
     render() {
         const { friends } = this.props
         return (
@@ -20,8 +20,9 @@ export default class FriendsList extends Component {
     }
 }
 const Box = styled.div`
+    margin-top: 1.5rem;
     display: flex;
-    width:100%;
+    /* width:100%; */
     flex-direction: column;
     justify-content: space-evenly;
     background: #fff;
@@ -31,6 +32,8 @@ const Box = styled.div`
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
     text-align: center;
+    padding:2rem;
+    /* border: 1px solid; */
 `
 
 const Gallery = styled.div`

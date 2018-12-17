@@ -38,14 +38,13 @@ const Box = styled.div`
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
     text-align: center;
+    padding: 2rem;
 `
 const GridA = styled.div`
     display: flex;
     flex-direction: column;
     height: 100%;
     margin-right: .15rem;
-    /* border: 1px solid red; */
-
     margin-top: .3rem;
     margin-bottom: .3rem;
 `
@@ -56,7 +55,6 @@ const GridB = styled.div`
     margin-top: .3rem;
     margin-bottom: .3rem;
     margin-left: .15rem;
-    /* border: 1px solid; */
 `
 const GItem1 = styled.div`
     background: #d8dce6 url('dog3.jpg') no-repeat center;
@@ -64,8 +62,8 @@ const GItem1 = styled.div`
     -webkit-background-size: 100% 100%;
     background-size: cover;
     border: .5px solid rgb(204, 208, 213);
-    height: 15rem;
-    width: 15rem;
+    height: 22.8rem;
+    width: 22.8rem;
     max-width: 100%;
     margin-right: .3rem;
     margin-left: .3rem;
@@ -79,8 +77,8 @@ const GItem2 = styled.div`
     -webkit-background-size: 100% 100%;
     background-size: cover;
     border: .5px solid rgb(204, 208, 213);
-    height: 15rem;
-    width: 15rem;
+    height: 22.8rem;
+    width: 22.8rem;
     max-width: 100%;
     margin-right: .3rem;
     margin-left: .3rem;
@@ -94,8 +92,8 @@ const Item1 = styled.div`
     -webkit-background-size: 100% 100%;
     background-size: cover;
     border: .5px solid rgb(204, 208, 213);
-    height: 10rem;
-    width: 15rem; 
+    height: 15rem;
+    width: 20rem; 
     max-width: 100%;
     margin-bottom: .3rem;
     /* width: 100%;
@@ -107,8 +105,8 @@ const Item2 = styled.div`
     -webkit-background-size: 100% 100%;
     background-size: cover;
     border: .5px solid rgb(204, 208, 213);
-    height: 10rem;
-    width: 15rem; 
+    height: 15rem;
+    width: 20rem; 
     max-width: 100%;
     margin-bottom: .3rem;
     /* width: 100%;
@@ -120,8 +118,8 @@ const Item3 = styled.div`
     -webkit-background-size: 100% 100%;
     background-size: cover;
     border: .5px solid rgb(204, 208, 213);
-    height: 10rem;
-    width: 15rem; 
+    height: 15rem;
+    width: 20rem; 
     max-width: 100%;
     margin-bottom: .3rem;
     /* width: 100%;
@@ -136,11 +134,14 @@ const Gallery = styled.div`
     margin-top: 1rem;
     margin-bottom: 1rem;
     `
+
+const Imgs = styled.div``
+
 const Bottom = styled.div`
     color: rgb(87, 107, 149);
     margin-top: 1rem;
+    margin-bottom: 2rem;
 `
-const Imgs = styled.div``
 const AddPhoto = styled.div``
 const Head = styled.div`
     display: flex;
@@ -148,4 +149,5 @@ const Head = styled.div`
     color: rgb(87, 107, 149);
     cursor: pointer;
     font-weight: 500;
+    padding: 1rem;
 `

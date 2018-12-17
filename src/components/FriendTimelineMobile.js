@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 
-const Friend = ({ first_name, last_name, avatar, new_posts }) => {
+const FriendTimelineMobile = ({ first_name, last_name, avatar, new_posts }) => {
     return (
         <Box>
             <Img src={avatar} />
@@ -9,35 +9,32 @@ const Friend = ({ first_name, last_name, avatar, new_posts }) => {
             <NewPosts>
                 <Icon />
                 {new_posts} new posts
-            </NewPosts>
-        </Box>
-    );
-};
-
-export default Friend;
+                </NewPosts>
+        </Box >
+    )
+}
+export default FriendTimelineMobile;
 
 const Box = styled.div`
     display: flex; 
     flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
-    margin: .4rem;
+    justify-content: center;
+    height: 10rem;
+    margin: .5rem;
 `
 const Img = styled.img`
     background-size: 100% 100%;
     -webkit-background-size: 100% 100%;
     background-size: cover;
     background-color: #ffcccc;
-    height: 10rem;
-    flex: 3;
+    height: 100%;
+    width: 100%;
     border: 1px solid white;
-    /* width:30%;
-    margin: .4rem;   */
 `
 const FriendName = styled.div`
-    padding: .3rem;
+    padding-top: .4rem;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: left;
 `
 const NewPosts = styled.div`
@@ -45,14 +42,13 @@ const NewPosts = styled.div`
     align-items: center;
     font-size: 1.1rem;
     color: grey;
-    margin-bottom: 1.5rem;
     text-align: left;
-    padding: .2rem;
+    padding-top: .8rem;
 `
 const Icon = styled.div`
     background:url('dot.png') no-repeat;
-    background-size: 1.5rem 1.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    padding-right: 1.7rem;
+    background-size: 1rem 1rem;
+    width: 1rem;
+    height: 1rem;
+    padding-right: 1rem;
 `

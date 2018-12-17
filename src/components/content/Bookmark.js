@@ -5,7 +5,7 @@ import {
     Link,
 } from "react-router-dom"
 
-import TopBar from '../TopBar';
+import TopBar from '../TopBarMobile';
 import Links from '../Links';
 import Timeline from './TimelineMobile';
 

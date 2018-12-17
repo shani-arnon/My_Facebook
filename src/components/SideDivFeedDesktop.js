@@ -114,17 +114,6 @@ const UserName = styled.div`
     line-height:2.8rem;
     color: #1d2129;
 `
-const FirstSection = styled.div`
-    display: flex;
-    height:100%;
-    flex-direction: column;
-    flex: 1;
-    justify-content: flex-start;
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: 1rem;
-    margin-left: 2rem;
-`
 const Messenger = styled.div`
     display: flex;
 `
@@ -135,7 +124,6 @@ const MessengerIcon = styled.div`
     width: 1.5rem;
     margin-right: .5rem;
 `
-
 const Watch = styled.div`
     display: flex;
 `

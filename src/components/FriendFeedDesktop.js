@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from "styled-components"
-import Friend from './FriendDesktop'
+import Friend from './FriendFeedListDesktop'
 
-export default class FriendsListSide extends Component {
+export default class FriendFeedDesktop extends Component {
     render() {
         const { friends = [] } = this.props
         return (
@@ -29,7 +29,7 @@ const Box = styled.div`
     color: #1d2129;
     margin-top: 4rem; 
     padding: 1.5rem;
-
+    /* border: 5px solid pink; */
 `
 const Gallery = styled.div`
     display: flex;
@@ -50,4 +50,3 @@ const Friends = styled.div`
     font-weight: bold;
     margin-bottom: 1rem;
 `
-const FindFriends = styled.div``

@@ -60,8 +60,8 @@ const Box = styled.div`
     padding: 1rem;
     margin-bottom: 1rem;
     flex-direction: column;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgrey;
+    border: 1px solid rgb(204, 208, 213);
+    border-radius: .5rem;
 `
 const Header = styled.div`
     display: flex;

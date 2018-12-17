@@ -37,17 +37,12 @@ class Links extends Component {
             selected: tab
         })
         this.props.history.push(tab)
-        // return window.location.href = `http://localhost:3000/#/${tab}`
-        // window.location.href = feed;
     }
     getPosY(tab) {
         const selected = this.state.selected;
         const current = this.state[tab];
         return selected === tab ? current.pickedY : current.normalY;
     }
-    //     <Item key="feed" onClick={() => this.selectTab('feed')}>
-    //     <Link to="/"><NavIcon posY={() => this.getPosY('feed')} /></Link>
-    // </Item>
     render() {
         console.log('TopBarDesktop')
         console.log('history', this.props.history)
@@ -114,7 +109,9 @@ const Item = styled.li`
     display:flex;
     justify-content:center;
     align-items:center;
-    /* background-color: #576b95; */
+    &:hover{
+        background-color: #fff
+    }
 `
 const TabBox = styled.div`
     display: flex;
@@ -143,8 +140,8 @@ const Icon = styled.div`
     background-image: url('/search_64.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: 1.7rem;
-    width: 1.7rem;
+    height: 2rem;
+    width: 2rem;
 `
 const Home = styled.div`
     display: flex;
@@ -159,7 +156,11 @@ const Home = styled.div`
     cursor: pointer;
     border-right: 1px solid #29487d;
     border-left: 1px solid #29487d;
-    height: 2.3rem;
+    padding: .7rem;
+    &:hover{
+        background-color: #3b5998;
+        border-radius: .3rem;
+    }
 `
 const User = styled.div`
     display: flex;
@@ -172,19 +173,25 @@ const User = styled.div`
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
+    padding: .7rem;
+    margin-left: 1rem;
+    &:hover{
+        background-color: #3b5998;
+        border-radius: .3rem;
+
+    }
 `
 const Img = styled.div`
     background: #d8dce6 url('dog2.jpg') no-repeat center;
     background-size: 100% 100%;
     display: flex;
-    height: 2.1rem;
-    width: 2.1rem;
+    height: 2.3rem;
+    width: 2.3rem;
     border-radius: 50%; 
     margin-right: .7rem;
 `
 const Create = styled.div`
     color: white;
-    height: 2.3rem;
     font-size: 1.2rem;
     font-weight: 500;
     text-decoration: none;
@@ -195,6 +202,12 @@ const Create = styled.div`
     flex: 1;
     justify-content: center;
     align-items: center;
+    padding: .7rem;
+    &:hover{
+        background-color:  #3b5998;
+        border-radius: .3rem;
+
+    }
 `
 const NavIcon = styled.div`
     background-image: url('./icons.png');

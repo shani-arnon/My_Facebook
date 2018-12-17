@@ -1,42 +1,31 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import styled from "styled-components";
-import CreatePost from "../CreatePost";
+import React, { Component } from 'react'
+import styled from "styled-components"
 
+import CreatePost from "../CreatePost"
 import PhotosTimeline from '../PhotosTimelineDesktop'
 
-// import FriendsList from "../FreindsList"
-import FriendTimelineSide from '../FriendTimelineDesktop'
-
+import FreindsList from "../FriendTimelineDesktop"
 import PostsList from "../PostsList"
 
-class Timeline extends Component {
+import SideDivTimelineDesktop from '../SideDivTimelineDesktop'
 
+class Timeline extends Component {
     state = {
         show_menu: false,
         user_id: 3,
         posts: [],
-        friends: []
+        friends: [],
+        sideContentIsAactive: false
     }
     showMenu = (event) => {
-        // event.preventDefault()
-        // this.setState({ show_menu: true }, () => {
-        //     document.addEventListener('onmouseenter', this.closeMenu);
-        // })
         this.setState({ show_menu: true })
     }
     closeMenu = () => {
-        // this.setState({ show_menu: false }, () => {
-        //     document.removeEventListener('onmouseenter', this.closeMenu);
-        // })
         this.setState({ show_menu: false })
     }
     componentDidMount() {
-        // console.log('componentDidMount');
         const POSTS_URL = `/api/posts/${this.state.user_id}`
-        // console.log('POSTS_URL', POSTS_URL)
         const FRIENDS_URL = `/api/friends/${this.state.user_id}`
-        // console.log('FRIENDS_URL', FRIENDS_URL)
         Promise.all([
             fetch(POSTS_URL)
                 .then(res => {
@@ -61,18 +50,19 @@ class Timeline extends Component {
                 console.log('parsing faild', ex)
             })
     }
-
     selectTab = (tab) => {
         this.setState({ selected: tab })
     }
-
     getPosY(tab) {
         const selected = this.state.selected;
         const current = this.state[tab];
-        return selected === tab ? current.pickedY : current.normalY;
+        return selected === tab ? current.pickedY : current.normalY
     }
-
     render() {
+        window.addEventListener('scroll', () => {
+            let pageY = window.scrollY
+            console.log(pageY)
+        })
         return (
             <App className={this.props.className}>
                 <HeroImg>
@@ -84,6 +74,7 @@ class Timeline extends Component {
                         onMouseEnter={this.showMenu}
                         onMouseLeave={this.closeMenu}>
                         Timeline
+                        <ArrowIcon />
                         {
                             this.state.show_menu &&
                             <DropdownContent>
@@ -104,7 +95,6 @@ class Timeline extends Component {
                     <ArchiveTab>Archive</ArchiveTab>
                     <MoreTab>More</MoreTab>
                 </TabBar>
-
                 <Box>
                     <Side>
                         <Intro>
@@ -131,8 +121,14 @@ class Timeline extends Component {
                             <MetaBtn> + Add to Featured</MetaBtn>
                         </Intro>
                         <PhotosTimeline />
-                        <FriendTimelineSide friends={this.state.friends} />
+                        <FreindsList friends={this.state.friends} />
                     </Side>
+                    {/* <StyledSideDivWrap>
+                        <StyledSideDiv> */}
+                    {/* <PhotosTimeline />
+                    <FriendsList friends={this.state.friends} /> */}
+                    {/* </StyledSideDiv>
+                    </StyledSideDivWrap> */}
                     <Main>
                         <CreatePost />
                         <PostsList posts={this.state.posts} />
@@ -147,39 +143,31 @@ class Timeline extends Component {
 }
 export default Timeline;
 
-const App = styled.div`
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgb(233, 235, 238);
-    @media (max-width: 700px) {
-        display: none;
-    }
-`
-const Box = styled.div`
-    display: grid;
-    grid-template-columns:40% 60%;
-    border-bottom: 1px solid lightgray;
-    margin-right: 2rem;
-`
-const Main = styled.div`
+
+// const StyledSideDiv = styled(FriendTimelineDesktop)``;
+// const StyledSideDivWrap = styled.div`
+//     ${StyledSideDiv}{
+//          display: flex; 
+// 	    width: 100%; 
+// 	    position: sticky;
+// 	    left: 0;
+//     }
+// `
+
+
+const Side = styled.div`
     display: flex; 
     flex-direction: column;
-    margin-left: 1rem;
-`
-const Side = styled.div`
-   display: flex; 
-    flex-direction: column;
     margin-top: 1.5rem;
+    /* position:  ${p => p.scrollY > 870 ? "sticky" : "relative"}; */
 `
+// const StickySide = p => <Side {...p} children={} />
 const Intro = styled.div`
     background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 30rem;
+    height: 25rem;
     font-size: 1.4rem;
     color: #1c1e21;
     border-radius: 0.3rem;
@@ -224,7 +212,7 @@ const MetaData = styled.div`
     display: flex;
     align-items: center;
     color: black;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 500;
     line-height: 1.3rem;
     font-family: Arial, Helvetica, sans-serif;
@@ -235,12 +223,13 @@ const MetaBtn = styled.div`
     justify-content: center;
     align-items: center;
     border: 1px solid #576b95;
+    color: #576b95;
     border-radius: .5rem;
     width: 100%;
     height: 1.2rem;
     padding: 1.2rem;
-    font-size: 1rem;
-    padding-top: 1rem;
+    font-size: 1.3rem;
+    padding-top: 1.2rem;
 `
 const WorkIcon = styled.div`
     background: url('work.png') no-repeat;
@@ -263,6 +252,52 @@ const FromIcon = styled.div`
     width: 1.5rem;
     margin-right: .5rem;
 `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const App = styled.div`
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(233, 235, 238);
+    @media (max-width: 700px) {
+        display: none;
+    }
+`
+const Box = styled.div`
+    display: grid;
+    grid-template-columns:40% 60%;
+    border-bottom: 1px solid lightgray;
+    margin-right: 2rem;
+`
+const Main = styled.div`
+    display: flex; 
+    flex-direction: column;
+    margin-left: 1rem;
+`
+
 const GridIcon = styled.div`
     background: url('grid.png') no-repeat;
     background-size: 1rem 1rem;
@@ -276,6 +311,13 @@ const ListdIcon = styled.div`
     height: 1.5rem;
     width: 1.5rem;
     margin-right: .5rem;
+`
+const ArrowIcon = styled.div`
+    background: url('down_arrow.png') no-repeat;
+    background-size: 1.3rem 1.3rem;
+    height: 1.3rem;
+    width: 1.3rem;
+    margin-left: .5rem;
 `
 const Item1 = styled.li`
     display: flex;
@@ -311,11 +353,13 @@ const TabBar = styled.div`
     cursor: pointer;
 `
 const TimelineBtnTab = styled.div`
+    display: flex;
+    align-items: center;
     position: relative;
-    display: inline-block;
     color: #365899;
     border-right: 1px solid #e9eaed;
     padding: 2rem;
+    /* border: 3px solid red; */
     &:hover{
         background-color: whitesmoke;
     }
@@ -324,16 +368,17 @@ const DropdownContent = styled.div`
     display:block;
     position: absolute;
     align-items: center;
-    top:6.2rem;
+    top:6rem;
     left:0;
     background-color: #fff;
     color: #3b5998;
-    min-width: 9.5rem;
+    min-width: 11.5rem;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     font-size: 1.1rem;
     line-height: 2.3rem;
     font-weight: normal;
+    border: 1px solid rgb(233, 235, 238);
 `
 const ProfileImg = styled.div`
     display: flex;
@@ -344,7 +389,7 @@ const ProfileImg = styled.div`
     background-size: 100% 100%;
     border-radius: 0.5rem;
     border: 3px solid #fff;
-    top: 18rem;
+    top: 25rem;
     left:3rem;
     z-index:2;
 `
@@ -354,7 +399,7 @@ const HeroImg = styled.div`
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    height: 33rem;
+    height: 40rem;
     background: #d8dce6 url('IMG_0662.JPG') no-repeat center;
     background-size: cover;
 `

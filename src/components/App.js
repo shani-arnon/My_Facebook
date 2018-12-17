@@ -5,7 +5,6 @@ import {
   Switch
 } from 'react-router-dom';
 import GlobalStyles from "../common/GlobalStyles";
-// import styled from "styled-components";
 
 import Feed from "./content/Feed";
 import Friends from "./content/Friends";
@@ -15,11 +14,8 @@ import Search from "./content/Search";
 import Timeline from "./content/Timeline";
 import Bookmark from './content/Bookmark';
 
-import TopBar from './TopBar'
+import TopBar from './TopBarMobile'
 import TopBarDesktop from './TopBarDesktop'
-
-// import TimelineMobile from './content/TimelineMobile'
-// import TimelineDesktop from './content/TimelineDesktop'
 
 
 class App extends Component {
@@ -30,8 +26,7 @@ class App extends Component {
       <div>
         <TopBarDesktop />
         <TopBar />
-        {/* <TimelineMobile />
-        <TimelineDesktop /> */}
+
         <Switch>
           <Route exact={true} path="/feed" component={Feed} />
           <Route path="/friends" component={Friends} />
