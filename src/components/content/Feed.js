@@ -3,8 +3,10 @@ import styled from "styled-components"
 
 import CreatePost from "../CreatePost"
 import PostsList from '../PostsList'
+
 import SideBar from '../SideDivFeedDesktop'
-import FriendFeedDesktop from '../FriendFeedDesktop'
+import FriendsBar from '../FriendFeedDesktop'
+
 
 export default class Feed extends Component {
     state = {
@@ -34,9 +36,8 @@ export default class Feed extends Component {
                 })
         ])
             .then(([posts, friends]) => {
-                console.log('friend', friends.length)
-                console.log('posts', posts.length)
-
+                // console.log('friend', friends.length)
+                // console.log('posts', posts.length)
                 this.setState({
                     posts,
                     friends
@@ -57,7 +58,7 @@ export default class Feed extends Component {
                     <PostsList posts={this.state.posts} />
                 </Main>
                 <FriendsWrap>
-                    <FriendsList friends={this.state.friends} />
+                    <StyledFriendsBar friends={this.state.friends} />
                 </FriendsWrap>
             </App>
         );
@@ -75,13 +76,16 @@ const SideBarWrap = styled.div`
         } 
     }
 `
-const FriendsList = styled(FriendFeedDesktop)``;
+const StyledFriendsBar = styled(FriendsBar)``;
 const FriendsWrap = styled.div`
-    right: 0;
-    position: sticky;
-    ${FriendsList}{
+    ${StyledFriendsBar}{
         @media (min-width: 700px) {
+            flex: 1;
+            right:0;
+            position: sticky;
             display: flex;
+	        width: 100%;
+	        top: 6rem;
         } 
     }
 `
@@ -93,7 +97,6 @@ const Main = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 5rem;
-    margin-right: 5rem;
     flex: 1;
     overflow: auto;
 `

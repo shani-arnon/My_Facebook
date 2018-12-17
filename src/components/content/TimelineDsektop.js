@@ -7,7 +7,7 @@ import PhotosTimeline from '../PhotosTimelineDesktop'
 import FreindsList from "../FriendTimelineDesktop"
 import PostsList from "../PostsList"
 
-import SideDivTimelineDesktop from '../SideDivTimelineDesktop'
+import SideCol from '../SideDivTimelineDesktop'
 
 class Timeline extends Component {
     state = {
@@ -15,7 +15,6 @@ class Timeline extends Component {
         user_id: 3,
         posts: [],
         friends: [],
-        sideContentIsAactive: false
     }
     showMenu = (event) => {
         this.setState({ show_menu: true })
@@ -96,7 +95,16 @@ class Timeline extends Component {
                     <MoreTab>More</MoreTab>
                 </TabBar>
                 <Box>
-                    <Side>
+                    <SideBarWrap>
+                        <StyledSideBar />
+                        {/* <FreindsList friends={this.state.friends} />
+                        <PhotosTimeline /> */}
+                    </SideBarWrap>
+                    {/* <SideCol>
+                        <FreindsList friends={this.state.friends} /> 
+                        <PhotosTimeline />
+                    </SideCol>  */}
+                    {/* <Side>
                         <Intro>
                             <Header>
                                 <Title>
@@ -122,13 +130,7 @@ class Timeline extends Component {
                         </Intro>
                         <PhotosTimeline />
                         <FreindsList friends={this.state.friends} />
-                    </Side>
-                    {/* <StyledSideDivWrap>
-                        <StyledSideDiv> */}
-                    {/* <PhotosTimeline />
-                    <FriendsList friends={this.state.friends} /> */}
-                    {/* </StyledSideDiv>
-                    </StyledSideDivWrap> */}
+                    </Side> */}
                     <Main>
                         <CreatePost />
                         <PostsList posts={this.state.posts} />
@@ -143,17 +145,17 @@ class Timeline extends Component {
 }
 export default Timeline;
 
-
-// const StyledSideDiv = styled(FriendTimelineDesktop)``;
-// const StyledSideDivWrap = styled.div`
-//     ${StyledSideDiv}{
-//          display: flex; 
-// 	    width: 100%; 
-// 	    position: sticky;
-// 	    left: 0;
-//     }
-// `
-
+const StyledSideBar = styled(SideCol)``;
+const SideBarWrap = styled.div`
+    ${StyledSideBar}{
+        @media (min-width: 700px) {
+            display: flex;
+	        width: 100%;
+	        position: sticky;
+	        top: 6rem;
+        } 
+    }
+`
 
 const Side = styled.div`
     display: flex; 
@@ -161,7 +163,6 @@ const Side = styled.div`
     margin-top: 1.5rem;
     /* position:  ${p => p.scrollY > 870 ? "sticky" : "relative"}; */
 `
-// const StickySide = p => <Side {...p} children={} />
 const Intro = styled.div`
     background-color: #fff;
     display: flex;

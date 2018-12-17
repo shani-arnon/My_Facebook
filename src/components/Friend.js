@@ -21,24 +21,22 @@ const Box = styled.div`
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    margin: .4rem;
+    margin: .3rem;
 `
 const Img = styled.img`
     background-size: 100% 100%;
     -webkit-background-size: 100% 100%;
     background-size: cover;
-    background-color: #ffcccc;
+    background-color: royalblue;
     height: 10rem;
     flex: 3;
     border: 1px solid white;
-    /* width:30%;
-    margin: .4rem;   */
 `
 const FriendName = styled.div`
     padding: .3rem;
     font-weight: bold;
-    font-size: 1.2rem;
-    text-align: left;
+    font-size: 1.1rem;
+    /* text-align: left; */
 `
 const NewPosts = styled.div`
     display:flex;

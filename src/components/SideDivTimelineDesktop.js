@@ -4,9 +4,38 @@ import styled from "styled-components"
 import PhotosTimeline from './PhotosTimelineDesktop'
 import FriendTimelineDesktop from './FriendTimelineDesktop'
 
-export default class SideTimelineFixed extends Component {
+export default class SideDivTimelineDesktop extends Component {
     state = {
-        friends: []
+        user_id: 3,
+        posts: [],
+        friends: [],
+    }
+    componentDidMount() {
+        const POSTS_URL = `/api/posts/${this.state.user_id}`
+        const FRIENDS_URL = `/api/friends/${this.state.user_id}`
+        Promise.all([
+            fetch(POSTS_URL)
+                .then(res => {
+                    return res.json()
+                })
+            ,
+            fetch(FRIENDS_URL)
+                .then(res => {
+                    return res.json()
+                })
+        ])
+            .then(([posts, friends]) => {
+                console.log('friend', friends.length)
+                console.log('posts', posts.length)
+
+                this.setState({
+                    posts,
+                    friends
+                })
+            })
+            .catch(ex => {
+                console.log('parsing faild', ex)
+            })
     }
     render() {
         return (
@@ -45,9 +74,9 @@ const Side = styled.div`
     display: flex; 
     flex-direction: column;
     margin-top: 1.5rem;
+    left: 0; 
     /* position:  ${p => p.scrollY > 870 ? "sticky" : "relative"}; */
 `
-// const StickySide = p => <Side {...p} children={} />
 const Intro = styled.div`
     background-color: #fff;
     display: flex;
