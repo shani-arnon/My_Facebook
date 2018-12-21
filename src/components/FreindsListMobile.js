@@ -33,7 +33,6 @@ const Box = styled.div`
     font-size: 1.4rem;
     text-align: center;
     padding:2rem;
-    /* border: 1px solid; */
 `
 
 const Gallery = styled.div`

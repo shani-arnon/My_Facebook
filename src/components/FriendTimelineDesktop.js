@@ -25,13 +25,14 @@ const Box = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height:60rem;
+    height:50rem;
     background: #fff;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.2rem;
     border: 1px solid rgb(204, 208, 213); 
     border-radius: .3rem;
     padding: .4rem;
+    /* border: 1px solid; */
 `
 const Head = styled.div`
     display: flex;
@@ -54,8 +55,7 @@ const Gallery = styled.div`
     background-size: cover;
     height: 100%;
     width:100%;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 `
 
 const FriendsIcon = styled.div`

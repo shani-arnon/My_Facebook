@@ -50,11 +50,13 @@ class Links extends Component {
             <Nav>
                 <Box>
                     <FBIcon />
-                    <Input type="text" placeholder="Search">
-                    </Input>
+                    <Input type="text" placeholder="Search" />
+
                     <Search>
                         <Icon />
                     </Search>
+
+
                     <TabBox>
                         <User key="timeline" onClick={() => this.selectTab('timeline')}><Link to='/timeline' ></Link>
                             <Img />
@@ -99,6 +101,7 @@ const Nav = styled.div`
 `
 const Box = styled.ul`
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height:5rem;
     border-bottom: 1px solid #29487d;
@@ -236,6 +239,6 @@ const Input = styled.input`
     border: 2px solid white;
     padding:.5rem;
     height: 2.7rem;
-    width: 40%;
+    width: 50%;
 `
 

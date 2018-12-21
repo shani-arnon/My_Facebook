@@ -7,11 +7,20 @@ import {
     BrowserRouter,
 } from 'react-router-dom';
 
-console.log('App')
+import { Provider } from 'react-redux'
+import configureStore from './configureStore'
+
+const store = configureStore()
+
+// store.dispatch(fetchBots())
+
+
 ReactDOM.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>
     , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

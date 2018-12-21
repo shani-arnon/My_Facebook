@@ -22,14 +22,15 @@ app.get('/api', (req, res) => {
     res.status(200).json({ express: 'Main API endpoint' });
 });
 
-//api routing
-
-// //List of Posts by user
+//List of Posts by user
 app.use('/api/posts', posts_router)
 // app.use('api/timeline/:id', user_router);
 
-// //List of Friends by user
+//List of Friends by user
 app.use('/api/friends', friends_router)
+
+//Specific Friend of user
+app.use('/api/friends/:id', friends_router)
 
 // //List of Posts relevant for user
 app.use('/api/', user_router)
@@ -48,6 +49,11 @@ app.use((err, req, res, next) => {
         res.status(500).json({ error: 'internal server error' })
     else
         res.status(500).json({ error: err.message, stack: err.stack })
+})
+
+//when no routes were matched...
+app.use('*', (req, res) => {
+    res.status(404).json({ [req.url]: "not found" })
 })
 
 //start the express api server

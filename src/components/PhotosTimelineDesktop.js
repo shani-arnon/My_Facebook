@@ -41,11 +41,9 @@ const Box = styled.div`
 const Head = styled.div`
     display: flex;
     align-items: center;
-    color: rgb(87, 107, 149);
+    /* color: rgb(87, 107, 149); */
     cursor: pointer;
-    font-weight: 500;
     padding: 1rem;
-    font-size: 1.4rem;
     color: #1c1e21;
     font-size: 1.4rem;
     font-weight: 500;

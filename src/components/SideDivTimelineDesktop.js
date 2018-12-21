@@ -75,20 +75,21 @@ const Side = styled.div`
     flex-direction: column;
     margin-top: 1.5rem;
     left: 0; 
-    /* position:  ${p => p.scrollY > 870 ? "sticky" : "relative"}; */
+    margin-bottom: 15rem;
 `
 const Intro = styled.div`
     background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 25rem;
-    font-size: 1.4rem;
-    color: #1c1e21;
+    height: 23rem;
     border-radius: 0.3rem;
     border: 1px solid lightgray;
     padding: 1rem;
-    margin-bottom: 1rem;
+    cursor: pointer;
+    color: #1c1e21;
+    font-size: 1.4rem;
+    font-weight: 500;
 `
 const Title = styled.div`
     display: flex;
@@ -119,8 +120,10 @@ const Tagline = styled.p`
 `
 const MetaAction = styled.div`
     color: #365899;
-    margin-left: 2rem;
-    font-size: 1.2rem;
+    margin-left: 3rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    font-size: 1.3rem;
     font-weight: 400;
 `
 const MetaData = styled.div`

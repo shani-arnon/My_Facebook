@@ -18,7 +18,7 @@ class TimelineMobile extends Component {
         backIcon: {
             pickedY: -282,
             normalY: -261
-        },
+        }
     }
 
     componentDidMount() {
@@ -65,6 +65,7 @@ class TimelineMobile extends Component {
     }
 
     render() {
+        const { posts, friends } = this.props;
         return (
             <App>
                 <Header>
@@ -109,8 +110,8 @@ class TimelineMobile extends Component {
                 <Box>
                     <CreatePost />
                     <Images />
-                    <FreindsList friends={this.state.friends} />
-                    <PostsList posts={this.state.posts} />
+                    <FreindsList friends={friends} />
+                    <PostsList posts={posts} />
                 </Box>
             </App >
         )
