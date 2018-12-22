@@ -9,10 +9,16 @@ import { fetch_timeline_data } from './Timeline.actions'
 
 class Timeline extends Component {
     componentDidMount() {
-        this.props.get_timeline_data();
+        this.props.get_timeline_data(this.props.user_id);
     }
     render() {
-        const { posts, friends } = this.props
+        const { posts, friends, is_loading, error_message } = this.props;
+        if (is_loading) {
+            return <h1>Please wait...</h1>
+        }
+        if (error_message !== '') {
+            return <h1>We regret to announce the operation failede</h1>
+        }
         return (
             <Wrap>
                 <TimelineDesktopWrap>
@@ -26,25 +32,26 @@ class Timeline extends Component {
     }
 }
 
-mapStateToProps = (state) => {
-    const { posts, friends, user_id } = state.timeline;
+function mapStateToProps(state) {
+    const { posts, friends, user_id, is_loading, error_message } = state.timeline;
     return {
         user_id,
         posts,
-        friends
+        friends,
+        is_loading,
+        error_message
     }
 }
 
-mapDispatchToProps = (dispatch, ownProps) => {
+function mapDispatchToProps(dispatch) {
     return {
-        get_timeline_data: () => dispatch(fetch_timeline_data(ownProps.user_id))
+        get_timeline_data: (user_id) => dispatch(fetch_timeline_data(user_id))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToPros)(Timeline)
+export default connect(mapStateToProps, mapDispatchToProps)(Timeline)
 
 const Wrap = styled.div``
-
 const Desktop = styled(TimelineDesktop)``
 const TimelineDesktopWrap = styled.div`
     ${Desktop}{

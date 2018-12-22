@@ -5,39 +5,41 @@ import PhotosTimeline from './PhotosTimelineDesktop'
 import FriendTimelineDesktop from './FriendTimelineDesktop'
 
 export default class SideDivTimelineDesktop extends Component {
-    state = {
-        user_id: 3,
-        posts: [],
-        friends: [],
-    }
-    componentDidMount() {
-        const POSTS_URL = `/api/posts/${this.state.user_id}`
-        const FRIENDS_URL = `/api/friends/${this.state.user_id}`
-        Promise.all([
-            fetch(POSTS_URL)
-                .then(res => {
-                    return res.json()
-                })
-            ,
-            fetch(FRIENDS_URL)
-                .then(res => {
-                    return res.json()
-                })
-        ])
-            .then(([posts, friends]) => {
-                console.log('friend', friends.length)
-                console.log('posts', posts.length)
+    // state = {
+    //     user_id: 3,
+    //     posts: [],
+    //     friends: [],
+    // }
+    // componentDidMount() {
+    //     const POSTS_URL = `/api/posts/${this.state.user_id}`
+    //     const FRIENDS_URL = `/api/friends/${this.state.user_id}`
+    //     Promise.all([
+    //         fetch(POSTS_URL)
+    //             .then(res => {
+    //                 return res.json()
+    //             })
+    //         ,
+    //         fetch(FRIENDS_URL)
+    //             .then(res => {
+    //                 return res.json()
+    //             })
+    //     ])
+    //         .then(([posts, friends]) => {
+    //             console.log('friend', friends.length)
+    //             console.log('posts', posts.length)
 
-                this.setState({
-                    posts,
-                    friends
-                })
-            })
-            .catch(ex => {
-                console.log('parsing faild', ex)
-            })
-    }
+    //             this.setState({
+    //                 posts,
+    //                 friends
+    //             })
+    //         })
+    //         .catch(ex => {
+    //             console.log('parsing faild', ex)
+    //         })
+    // }
     render() {
+        const { posts, friends } = this.props;
+
         return (
             <Side className={this.props.className}>
                 <Intro>
@@ -64,7 +66,7 @@ export default class SideDivTimelineDesktop extends Component {
                     <MetaBtn> + Add to Featured</MetaBtn>
                 </Intro>
                 <PhotosTimeline />
-                <FriendTimelineDesktop friends={this.state.friends} />
+                <FriendTimelineDesktop friends={friends} />
             </Side>
         )
     }

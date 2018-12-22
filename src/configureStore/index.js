@@ -14,15 +14,14 @@ import rootReducer from './root.reducer'
 
 export default function configureStore() {
 
-  const middleware = [thunkMiddleware,save_state_locally,loggerMiddleware]
+  const middleware = [thunkMiddleware, save_state_locally, loggerMiddleware]
   const middlewareEnhancer = applyMiddleware(...middleware)
 
-  const enhancers = [monitorReducersEnhancer,middlewareEnhancer]
+  const enhancers = [monitorReducersEnhancer, middlewareEnhancer]
   const composedEnhancers = composeWithDevTools(...enhancers)
   //const composedEnhancers = compose(...enhancers)
 
-  const preloadedState = get_local_state()
+  const preloadedState = {};// get_local_state()
   const store = createStore(rootReducer, preloadedState, composedEnhancers)
   return store
 }
-  

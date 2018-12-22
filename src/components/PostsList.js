@@ -3,9 +3,9 @@ import styled from "styled-components";
 import Post from "./Post"
 
 export default class PostsList extends Component {
-    state = {
-        posts: []
-    }
+    // state = {
+    //     posts: []
+    // }
     render() {
         const { posts } = this.props
         return (
@@ -21,7 +21,6 @@ export default class PostsList extends Component {
 const StyledGallery = styled.div`
     display: flex;
     width: 100%; 
-    /* border: 3px solid red; */
 `;
 const GalleryBox = styled.div`
     display: flex;

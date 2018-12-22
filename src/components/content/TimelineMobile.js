@@ -11,9 +11,9 @@ import ActionBar from '../ActionBar';
 class TimelineMobile extends Component {
 
     state = {
-        user_id: 3,
-        posts: [],
-        friends: [],
+        // user_id: 3,
+        // posts: [],
+        // friends: [],
         selected: 'feed',
         backIcon: {
             pickedY: -282,
@@ -21,38 +21,38 @@ class TimelineMobile extends Component {
         }
     }
 
-    componentDidMount() {
-        console.log('componentDidMount');
+    // componentDidMount() {
+    //     console.log('componentDidMount');
 
-        const POSTS_URL = `/api/posts/${this.state.user_id}`
-        console.log('POSTS_URL', POSTS_URL)
-        const FRIENDS_URL = `/api/friends/${this.state.user_id}`
-        console.log('FRIENDS_URL', FRIENDS_URL)
+    //     const POSTS_URL = `/api/posts/${this.state.user_id}`
+    //     console.log('POSTS_URL', POSTS_URL)
+    //     const FRIENDS_URL = `/api/friends/${this.state.user_id}`
+    //     console.log('FRIENDS_URL', FRIENDS_URL)
 
-        Promise.all([
-            fetch(POSTS_URL)
-                .then(res => {
-                    return res.json()
-                })
-            ,
-            fetch(FRIENDS_URL)
-                .then(res => {
-                    return res.json()
-                })
-        ])
-            .then(([posts, friends]) => {
-                console.log('friend', friends.length)
-                console.log('posts', posts.length)
+    //     Promise.all([
+    //         fetch(POSTS_URL)
+    //             .then(res => {
+    //                 return res.json()
+    //             })
+    //         ,
+    //         fetch(FRIENDS_URL)
+    //             .then(res => {
+    //                 return res.json()
+    //             })
+    //     ])
+    //         .then(([posts, friends]) => {
+    //             console.log('friend', friends.length)
+    //             console.log('posts', posts.length)
 
-                this.setState({
-                    posts,
-                    friends
-                })
-            })
-            .catch(ex => {
-                console.log('parsing faild', ex)
-            })
-    }
+    //             this.setState({
+    //                 posts,
+    //                 friends
+    //             })
+    //         })
+    //         .catch(ex => {
+    //             console.log('parsing faild', ex)
+    //         })
+    // }
 
     selectTab = (tab) => {
         this.setState({ selected: tab })

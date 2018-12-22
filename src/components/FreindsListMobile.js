@@ -22,7 +22,6 @@ export default class FriendsListMobile extends Component {
 const Box = styled.div`
     margin-top: 1.5rem;
     display: flex;
-    /* width:100%; */
     flex-direction: column;
     justify-content: space-evenly;
     background: #fff;
@@ -34,13 +33,11 @@ const Box = styled.div`
     text-align: center;
     padding:2rem;
 `
-
 const Gallery = styled.div`
     display: flex;
     flex: 1;
     flex-wrap: wrap;
 `
-
 const Bottom = styled.div`
     color: rgb(87, 107, 149);
     margin-top: 1rem;
