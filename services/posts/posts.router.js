@@ -35,7 +35,6 @@ router.post('/', md(async (req, res) => {
         user_id: req.body.user_id,
         timestamp: new Date().getTime(),
         content: req.body.content,
-
     }
     all_posts.push(new_post)
     await write_file(file_path, JSON.stringify(all_posts))

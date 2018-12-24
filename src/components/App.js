@@ -17,7 +17,6 @@ import Bookmark from './content/Bookmark';
 import TopBar from './TopBarMobile'
 import TopBarDesktop from './TopBarDesktop'
 
-
 class App extends Component {
   render() {
     // console.log('App')
@@ -37,6 +36,7 @@ class App extends Component {
           <Route path="/timeline" component={Timeline} />
         </Switch>
         <GlobalStyles />
+        <Feed />
       </div>
 
     )

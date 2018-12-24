@@ -1,32 +1,80 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 
-const CreatePost = () => {
-    return (
-        <Box>
-            <PostBox>
-                <Img></Img>
-                <Input
-                    type="text"
-                    placeholder="What's on your mind?" >
-                </Input>
-            </PostBox>
-            <ExtraBox>
-                <Photo>
-                    <PhotoIcon />
-                    Photo
-                </Photo>
-                <CheckIn>
-                    <CheckInIcon />
-                    Check In
-                </CheckIn>
-                <Activity>
-                    <ActivityIcon />
-                    Life Event
-                </Activity>
-            </ExtraBox>
-        </Box>
-    );
+class CreatePost extends Component {
+    state = {
+        user_id: 2,
+        new_post: "",
+        posts: []
+    }
+    createPost = () => {
+        const NEW_POST_URL = '/api/posts'
+        console.log('NEW_POST_URL', NEW_POST_URL)
+        console.log(this.state.new_post)
+
+        let post = {
+            user_id: this.state.user_id,
+            content: this.state.new_post
+        }
+
+        fetch(NEW_POST_URL, {
+            method: 'post',
+            body: JSON.stringify(post)
+        })
+            .then(res => {
+                return res.json({
+                    user_id: this.state.user_id,
+                    content: this.state.new_post
+                })
+            })
+            .catch(ex => {
+                console.log('parsing faild', ex)
+            })
+    }
+
+
+    handleChange = (e) => {
+        this.setState({
+            new_post: e.target.value
+        });
+    }
+
+    handleKeyPress = (e) => {
+        if (e.charCode === 13) {
+            this.createPost();
+        }
+    }
+
+    render() {
+
+        return (
+            <Box>
+                <PostBox>
+                    <Img></Img>
+                    <Input
+                        onKeyPress={this.handleKeyPress}
+                        onChange={this.handleChange}
+                        type="text"
+                        placeholder="What's on your mind?" >
+                    </Input>
+                </PostBox>
+                <ExtraBox>
+                    <Photo>
+                        <PhotoIcon />
+                        Photo
+                    </Photo>
+                    <CheckIn>
+                        <CheckInIcon />
+                        Check In
+                    </CheckIn>
+                    <Activity>
+                        <ActivityIcon />
+                        Life Event
+                    </Activity>
+                </ExtraBox>
+            </Box>
+        );
+    }
 };
 
 export default CreatePost;
